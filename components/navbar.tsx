@@ -33,19 +33,15 @@ export default function Navbar() {
           </Link>
         </nav>
         <div className="flex items-center space-x-4">
-          <Button className="hidden sm:inline-flex bg-[#AD9E68] text-white px-6 rounded-full">سجل الآن</Button>
-          <Button variant="outline" size="icon" className="lg:hidden">
-            <MenuIcon className="h-6 w-6" />
-            <span className="sr-only">Toggle navigation</span>
-          </Button>
+          <Button className="hidden sm:inline-flex ml-10 bg-[#AD9E68] text-white px-6 rounded-full">سجل الآن</Button>
         </div>
       </div>
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="fixed top-4 right-4 lg:hidden">
+          <button className="fixed top-[2.9375rem] left-4 md:left-6 lg:hidden"> 
             <MenuIcon className="h-6 w-6" />
             <span className="sr-only">Toggle navigation</span>
-          </Button>
+          </button>
         </SheetTrigger>
         <SheetContent side="right" className="bg-background p-6">
           <div className="grid gap-4">
@@ -85,9 +81,9 @@ function MenuIcon(props: any) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
+      <line x1="2.25" x2="21.75" y1="6" y2="6" />
+      <line x1="2.25" x2="21.75" y1="12" y2="12" />
+      <line x1="2.25" x2="21.75" y1="18" y2="18" />
     </svg>
   )
 }
