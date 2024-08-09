@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/carousel";
 import { FaYoutube, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa';
 import SpeakerPicture from "../../assets/speaker-picture.jpg";
+import vector1Src from "../../assets/speakers-vector-1.svg";
+import vector2Src from "../../assets/speakers-vector-2.svg";
 
 const SpeakerCard = ({ name, title, imageSrc, tags }) => (
   <div>
@@ -84,7 +86,13 @@ export const Speakers = () => {
 
   return (
     <section className="h-[1158px] bg-[#EDE6CC] w-full">
-      <div className="container mx-auto pt-[138px]">
+      <div className="container mx-auto pt-[138px] relative">
+        <div className="absolute top-16 left-0">
+          <Image src={vector1Src} alt="Vector" width={290} height={246} quality={100} />
+        </div>
+        <div className="absolute bottom-0 right-10">
+          <Image src={vector2Src} alt="Vector" width={290} height={246} quality={100} />
+        </div>
         <h2 className="text-[#252C32] text-[2.5rem] leading-[3.25rem] font-bold text-center">المتحدثون المتميزون</h2>
         <p className="mt-6 mb-24 max-w-3xl mx-auto text-center text-[#252C32] text-lg font-normal">
           لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
@@ -103,7 +111,7 @@ export const Speakers = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="relative flex justify-center mt-16">
+          <div className="relative flex justify-center mt-16 space-x-16">
             <CarouselPrevious className='relative bg-[#AD9E68]/20 border-none hover:bg-[#e4d9b0] h-10 w-10' />
             <CarouselNext className='relative bg-[#AD9E68]/20 border-none hover:bg-[#e4d9b0] h-10 w-10' />
           </div>
