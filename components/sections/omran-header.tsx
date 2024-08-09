@@ -10,7 +10,7 @@ import { CalendarDays, MapPin } from 'lucide-react';
 export const OmranHeader = () => {
   const { days, hours, minutes, seconds } = useCountdown(new Date('2024-08-11'));
   return (
-    <header className="relative w-full h-screen flex items-center justify-center">
+    <header className="relative w-full h-screen pt-[8.626rem] md:pt-0 flex md:items-center justify-center">
       <Image
         className="object-cover"
         src={backgroundSrc}
@@ -23,13 +23,13 @@ export const OmranHeader = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50" />
       <div className="relative z-10 text-white text-center flex flex-col gap-[5.25rem]">
         <div className="flex flex-col gap-6 items-center">
-          <p className="font-medium text-2xl leading-9 opacity-80">
+          <p className="font-medium md:text-2xl leading-9 opacity-80">
             مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر
           </p>
-          <h1 className="text-[4rem] leading-[4.25rem] font-bold">مؤتمر عمران السنوي<br /> 2024</h1>
-          <Button className="bg-white text-[#011318] text-base hover:bg-[#E6EAEB] rounded-full border border-solid border-[#E6EAEB] min-w-[8.5rem] h-12 px-6 font-medium">سجل الآن</Button>
+          <h1 className="max-w-72 md:max-w-[41.625rem] text-[2.5rem] md:text-[4rem] md:leading-[4.25rem] font-bold">مؤتمر عمران السنوي 2024</h1>
+          <Button className="bg-white text-[#011318] text-base hover:bg-[#E6EAEB] rounded-full border border-solid border-[#E6EAEB] md:min-w-[8.5rem] py-1.5 md:py-0 md:h-12 px-[1.125rem] md:px-6 font-medium">سجل الآن</Button>
         </div>
-        <div className="font-bold text-base text-start flex items-start gap-[5.25rem]">
+        <div className="font-medium md:font-bold text-base text-start flex flex-col sm:flex-row md:items-start gap-6 md:gap-[5.25rem]">
           <div className="flex items-start gap-4">
             <MapPin />
             <p>فندق istanbul baya fair & suite <br />- مدينة اسطنبول، تركيا.</p>
@@ -60,7 +60,7 @@ const CountdownUnit: React.FC<CountdownUnitProps> = ({ value, label }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="bg-white bg-opacity-20 rounded-xl flex flex-col justify-center items-center overflow-hidden backdrop-blur-md px-[1.125rem] py-[0.563rem] gap-[0.875rem] w-[9rem] h-[8.875rem]">
+      <div className="bg-white bg-opacity-20 rounded-xl flex flex-col justify-center items-center overflow-hidden backdrop-blur-md px-3 md:px-[1.125rem] py-[0.563rem] gap-2 md:gap-[0.875rem] md:w-[9rem] md:h-[8.875rem]">
         <AnimatePresence mode="popLayout">
           <motion.div
             key={value}
@@ -68,7 +68,7 @@ const CountdownUnit: React.FC<CountdownUnitProps> = ({ value, label }) => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="text-[5.375rem] font-normal leading-[4.063rem]"
+            className="text-[2.625rem] md:text-[5.375rem] leading-none md:leading-[4.063rem]"
           >
             {formattedValue}
           </motion.div>
