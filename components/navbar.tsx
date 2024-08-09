@@ -43,7 +43,7 @@ export default function Navbar() {
             <span className="sr-only">Toggle navigation</span>
           </button>
         </SheetTrigger>
-        <SheetContent side="right" className="bg-background p-6">
+        <SheetContent side="fullScreen" className="bg-background p-6">
           <div className="grid gap-4">
             <Link href="#" className="text-sm font-medium hover:text-primary transition-colors" prefetch={false}>
               Home
