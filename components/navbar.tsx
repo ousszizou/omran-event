@@ -1,7 +1,8 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { OmranLogo } from "@/assets/omran-logo"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import Link from "next/link"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa"
 import { Separator } from "./ui/separator"
 
 export default function Navbar() {
@@ -43,21 +44,102 @@ export default function Navbar() {
             <span className="sr-only">Toggle navigation</span>
           </button>
         </SheetTrigger>
-        <SheetContent side="fullScreen" className="bg-background p-6">
-          <div className="grid gap-4">
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors" prefetch={false}>
-              Home
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors" prefetch={false}>
-              About
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors" prefetch={false}>
-              Services
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors" prefetch={false}>
-              Contact
-            </Link>
-            <Button className="w-full">Get Started</Button>
+        <SheetContent side="fullScreen" className="bg-black p-6">
+          <Link href="#" className="flex items-center mt-10 w-min mx-auto" prefetch={false}>
+            <OmranLogo width={90} height={121} />
+          </Link>
+          
+          <div className="mt-9 flex items-center justify-center gap-4 text-white">
+            <FaTwitter className="w-6 h-6" />
+            <FaLinkedinIn className="w-6 h-6" />
+            <FaFacebookF className="w-6 h-6" />
+            <FaInstagram className="w-6 h-6" />
+           </div>
+
+           
+           <div className="mt-10 p-2 grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <h3 className="font-bold mb-6 text-white text-lg leading-[2rem]">الخدمات</h3>
+              <ul className="space-y-2 text-white/75">
+                <li>
+                  <Link href="#">برامجنا</Link>
+                </li>
+                <li>
+                  <Link href="#">الاستشارات</Link>
+                </li>
+                <li>
+                  <Link href="#">التمويل</Link>
+                </li>
+                <li>
+                  <Link href="#">التدريب</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold mb-6 text-lg text-white leading-[2rem]">الأخبار</h3>
+              <ul className="space-y-2 text-white/75">
+                <li>
+                  <Link href="#">المدونة</Link>
+                </li>
+                <li>
+                  <Link href="#">الفعاليات</Link>
+                </li>
+                <li>
+                  <Link href="#">الشهادات</Link>
+                </li>
+                <li>
+                  <Link href="#">الوظائف</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold mb-6 text-lg text-white leading-[2rem]">تواصل</h3>
+              <ul className="space-y-2 text-white/75">
+                <li>
+                  <Link href="#">اتصل بنا</Link>
+                </li>
+                <li>
+                  <Link href="#">أسئلة شائعة</Link>
+                </li>
+                <li>
+                  <Link href="#">الشركاء</Link>
+                </li>
+                <li>
+                  <Link href="#">انضم إلينا</Link>
+                </li>
+                <li>
+                  <Link href="#">ادعمنا</Link>
+                </li>
+              </ul>
+            </div>
+            <ul className="space-y-2 text-white/75 underline">
+              <li>
+                <Link href="#" className="">سياسة الخصوصية</Link>
+              </li>
+              <li>
+                <Link href="#">تعريف</Link>
+              </li>
+              <li>
+                <Link href="#">سياسة الكوكيز</Link>
+              </li>
+              <li>
+                <Link href="#">الشروط والأحكام</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="max-w-xl">
+            <h3 className="font-bold mb-6 text-lg leading-[2rem] text-white">نحن نبقيك على اطلاع</h3>
+            <div className="flex">
+              <input
+                type="email"
+                placeholder="الإيميل"
+                className="min-w-0 px-4 h-12 bg-white text-black flex-grow rounded-tr-full rounded-br-full"
+              />
+              <Button className="bg-[#AD9E68] h-12 px-6 text-white rounded-tl-full rounded-bl-full">تسجيل</Button>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-white/40 text-white text-[0.625rem] font-medium text-center">
+            <p>© 2024<span className='text-[#AD9E68] ms-1'>فعاليات عمران</span>. جميع الحقوق محفوظة</p>
           </div>
         </SheetContent>
       </Sheet>
