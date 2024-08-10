@@ -49,7 +49,7 @@ export const ConferenceProgram = () => {
 
   return (
     <div className="py-16 px-4 md:px-8 lg:px-16 bg-white" dir="rtl">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {events.map((event, index) => (
           <TimelineEvent key={index} {...event} />
         ))}
