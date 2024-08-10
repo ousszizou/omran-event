@@ -39,7 +39,7 @@ export const OmranHeader = () => {
             <p>10-11 أكتوبر 2024 • 11-12 أكتوبر 2024</p>
           </div>
         </div>
-        <div className="flex items-center justify-center space-x-4 rtl:space-x-reverse">
+        <div className="flex items-center justify-center gap-2 sm:gap-4 rtl:space-x-reverse">
           <CountdownUnit value={days} label="أيام" />
           <CountdownUnit value={hours} label="ساعات" />
           <CountdownUnit value={minutes} label="دقائق" />
