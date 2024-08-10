@@ -27,7 +27,7 @@ const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hide
 };
 
 const TimelineEvent = ({ number, title, date, items }) => (
-  <div className={`px-4 sm:px-0 flex flex-col lg:flex-row relative ${+number === 2 ? 'mt-8 -top-20' : (+number === 3 ? '-top-32' : '')
+  <div className={`px-4 sm:px-0 lg:px-4 flex flex-col lg:flex-row relative ${+number === 2 ? 'mt-8 -top-20' : (+number === 3 ? '-top-32' : '')
     }`}>
     <div className="lg:w-1/2 flex-1 flex flex-col items-start gap-4 relative">
       <div className="xl:absolute order-1 lg:order-3 xl:-right-32 top-5 text-[#AD9E68]/40 font-medium text-[2.625rem] lg:text-8xl">
