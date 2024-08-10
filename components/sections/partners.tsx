@@ -26,7 +26,7 @@ export const Partners = () => {
       <div className='container mx-auto'>
         <h2 className="font-bold text-center text-black text-[2.5rem] leading-[3.25rem]">فخورون بشركاء الإنجاز</h2>
 
-        <div className="flex gap-11 mt-24">
+        <div className="flex flex-wrap justify-center gap-11 mt-24">
           {partners.map((partner, index) => (
             <PartnerLogo key={index} {...partner} />
           ))}
