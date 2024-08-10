@@ -24,7 +24,7 @@ const ParallaxColumn = ({ children, y }: { children: React.ReactNode, y: MotionV
 
 const AwardCard = ({ text, color }: {text: string; color: "white" | "beige" | "dark" | "light"}) => {
   return (
-    <div className={`py-7 md:py-[2.5rem] px-5 rounded-2xl flex items-center gap-6 md:min-h-[130px]
+    <div className={`py-7 md:py-[2.5rem] pr-2.5 pl-3.5 md:px-5 rounded-2xl flex items-center gap-6 md:min-h-[130px]
       ${color === "white" || color ===  "light" ? "text-[#6B7280]" : "text-white"}
       ${color === "white" ? "border-lg border-solid border-[#AD9E68]" : color === "beige" ? "bg-[#AD9E68]" : color === "dark" ? "bg-[#252C32]" : "bg-[#AD9E6833]"}
     `}>
@@ -58,11 +58,11 @@ export const AwardsBadges = () => {
         </ParallaxColumn>
 
         <ParallaxColumn y={translateSecond}>
-          <div className="w-full h-40 md:h-2/4 relative">
+          <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy1Src} alt="Trophy 1" fill className="rounded-2xl object-cover" />
           </div>
           <AwardCard text="فضل مشروع في الفكر الحضاري" color="beige" />
-          <div className="w-full h-40 md:h-3/4 relative">
+          <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy2Src} alt="Trophy 2" fill className="rounded-2xl object-cover" />
           </div>
         </ParallaxColumn>
@@ -71,7 +71,7 @@ export const AwardsBadges = () => {
           <AwardCard text="افضل مشروع في تكنولوجيا الآلة" color="light" />
           <AwardCard text="أفضل مشروع في الذكاء الاصطناعي" color="white" />
           <AwardCard text="افضل مشروع في تكنولوجيا الآلة" color="dark" />
-          <div className="w-full h-40 md:h-4/6 relative">
+          <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy3Src} alt="Trophy 3" fill className="rounded-2xl object-cover" />
           </div>
         </ParallaxColumn>
