@@ -5,10 +5,10 @@ import OmranAnnualAwardImage from "../../assets/omran-annual-award.svg";
 export const OmranAnnualAward = () => {
   return (
     <section className="container mx-auto">
-      <div className="flex flex-col md:flex-row items-start">
-        <div className="md:w-3/5 text-[#6B7280]">
-          <h2 className="text-[2.5rem] leading-[3.25rem] font-bold mb-6 text-[#252C32]">جائزة عمران السنوية</h2>
-          <p className="text-lg font-medium max-w-xl">
+      <div className="flex flex-col md:flex-row gap-4 items-center md:items-start">
+        <div className="md:w-3/5 text-[#6B7280] order-2 md:order-1">
+          <h2 className="text-2xl md:text-[2.5rem] leading-[3.25rem] font-bold mb-6 text-[#252C32]">جائزة عمران السنوية</h2>
+          <p className="text-lg font-medium md:font-normal max-w-xl">
             تتنافس المشاريع على جائزة عمران السنوية التي تقدر بـ <span className='text-[#AD9E68]'>10 آلاف دولار</span>، وهي
             مفتوحة لجميع المشاريع المتميزة التي تتوفر فيها الشروط التالية:
           </p>
@@ -26,7 +26,7 @@ export const OmranAnnualAward = () => {
             </ul>
             <li>المشاركة بالعرض في المؤتمر</li>
           </ul>
-          <ul className='text-[#252C32] font-medium list-disc list-inside space-y-4 mt-8'>
+          <ul className='text-[#252C32] font-medium md:font-normal list-disc list-inside space-y-4 mt-8'>
             <li>
               رسوم التسجيل (حضوريا): المبيت والإطعام 500 دولار/بدون مبيت وإطعام: 200 دولار
             </li>
@@ -35,7 +35,7 @@ export const OmranAnnualAward = () => {
             </li>
           </ul>
         </div>
-        <div className="md:w-2/5 mb-8 md:mb-0">
+        <div className="md:w-2/5 order-1 md:order-2 mb-8 md:mb-0">
           <Image
             src={OmranAnnualAwardImage}
             alt="جائزة عمران السنوية"
