@@ -111,7 +111,7 @@ export const Speakers = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="relative flex justify-center mt-16 space-x-16">
+          <div className="relative flex md:justify-center mt-16 space-x-16">
             <CarouselPrevious className='relative bg-[#AD9E68]/20 border-none hover:bg-[#e4d9b0] h-10 w-10' />
             <CarouselNext className='relative bg-[#AD9E68]/20 border-none hover:bg-[#e4d9b0] h-10 w-10' />
           </div>
