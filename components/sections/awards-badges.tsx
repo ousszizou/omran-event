@@ -9,8 +9,9 @@ import { MedalIcon } from "../../assets/medal-icon";
 import { motion, type MotionValue, useScroll, useTransform } from 'framer-motion';
 
 const ParallaxColumn = ({ children, y }: { children: React.ReactNode, y: MotionValue<number> }) => (
+  // To do: add hook to update condition on window resize
   <motion.div
-    style={{ y }}
+    style={window.innerWidth >= 768 ? { y } : undefined}
     className="space-y-8 w-full"
   >
     {children}
@@ -61,7 +62,7 @@ export const AwardsBadges = () => {
         </ParallaxColumn>
 
         <ParallaxColumn y={translateSecond}>
-          <div className="w-full h-2/4 relative">
+          <div className="w-full h-40 md:h-2/4 relative">
             <Image src={trophy1Src} alt="Trophy 1" fill className="rounded-2xl object-cover" />
           </div>
           <div className="py-[2.5rem] px-5 rounded-2xl bg-[#AD9E68] text-white flex items-center gap-6 min-h-[130px]">
@@ -70,7 +71,7 @@ export const AwardsBadges = () => {
               أفضل مشروع في الفكر الحضاري
             </span>
           </div>
-          <div className="w-full h-3/4 relative">
+          <div className="w-full h-40 md:h-3/4 relative">
             <Image src={trophy2Src} alt="Trophy 2" fill className="rounded-2xl object-cover" />
           </div>
         </ParallaxColumn>
@@ -94,7 +95,7 @@ export const AwardsBadges = () => {
               أفضل مشروع في تكنولوجيا الآلة
             </span>
           </div>
-          <div className="w-full h-4/6 relative">
+          <div className="w-full h-40 md:h-4/6 relative">
             <Image src={trophy3Src} alt="Trophy 3" fill className="rounded-2xl object-cover" />
           </div>
         </ParallaxColumn>
