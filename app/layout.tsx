@@ -7,8 +7,8 @@ import { Footer } from "@/components/footer";
 const readex_pro = Readex_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "مؤتمر عمران السّنوي 2024 | مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر",
+  description: "انضم إلى مؤتمر عمران السنوي 2024 في اسطنبول، حيث يجتمع رواد الأعمال الشباب لمناقشة وتطوير مشاريع ناهضة تستجيب للتحولات المعاصرة وتسهم في نهضة الأمة الإسلامية. اكتشف فرص التعلم والتواصل والمنافسة على جائزة عمران السنوية.",
 };
 
 export default function RootLayout({
