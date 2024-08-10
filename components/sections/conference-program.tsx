@@ -1,55 +1,33 @@
-import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Separator } from '../ui/separator';
 
-const TimelineEvent = ({ number, title, date, items, isAccordion = false }) => (
+const TimelineEvent = ({ number, title, date, items }) => (
   <div className="flex mb-8">
-    <div className="flex flex-col items-center mr-4">
-      <div className="w-12 h-12 bg-[#C3B897] rounded-full flex items-center justify-center text-white text-2xl font-bold">
+    {/* Right side */}
+    <div className="w-1/2 flex flex-col items-start gap-4 relative">
+      <div className="absolute -right-32 top-5 text-[#AD9E68]/40 font-medium text-8xl">
         {number}
       </div>
-      <div className="w-0.5 bg-[#C3B897] grow mt-2" />
+      <p className="text-sm text-gray-500 text-right">{date}</p>
+      <Separator orientation='horizontal' className='bg-[#AD9E68] h-[2px]' />
+      <h3 className="text-[2.5rem] leading-[3.25rem] font-bold text-[#AD9E68] text-right text-balance">{title}</h3>
     </div>
-    <div className="grow">
-      <div className="flex justify-between items-start mb-4">
-        <p className="text-sm text-gray-500">{date}</p>
-        <h3 className="text-2xl font-bold text-right text-[#C3B897]">{title}</h3>
+    <Separator orientation='vertical' className='bg-[#AD9E68] w-[2px] h-auto mt-9' />
+    {/* Left side: Timeline items */}
+    <div className="w-1/2 mt-[1.1rem] ms-[0.15rem]">
+      <div className="flex flex-col pb-8">
+        {items.map((item, index) => (
+          <div key={index} className="relative mb-8">
+            <div className="absolute -right-3 top-3 w-4 h-4 bg-[#AD9E68] rounded-full" />
+            <div className="px-8">
+              <h4 className="text-[#252C32] text-[1.375rem] leading-[2rem] text-right mb-8 text-balance font-bold">{item.title}</h4>
+              <div className="flex gap-8 items-center">
+                <div className='text-white rounded-full px-5 py-2 bg-gradient-to-r from-[#AD9E68] from-0% to-[#47412B] to-100% text-xs'>{item.type}</div>
+                <p className="text-lg text-[#AD9E68] text-right font-medium">{item.presenter}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-      {isAccordion ? (
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger className="text-right">{items[0].title}</AccordionTrigger>
-            <AccordionContent>
-              <div className="flex justify-between items-center">
-                <Button variant="secondary" size="sm" className="bg-[#C3B897] text-white">
-                  {items[0].type}
-                </Button>
-                <p className="text-sm text-gray-600 text-right">{items[0].presenter}</p>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      ) : (
-        items.map((item, index) => (
-          <Card key={index} className="mb-4">
-            <CardContent className="p-4">
-              <div className="flex justify-between items-center">
-                <Button variant="secondary" size="sm" className="bg-[#C3B897] text-white">
-                  {item.type}
-                </Button>
-                <h4 className="text-lg font-semibold text-right">{item.title}</h4>
-              </div>
-              <p className="text-sm text-gray-600 mt-2 text-right">{item.presenter}</p>
-            </CardContent>
-          </Card>
-        ))
-      )}
     </div>
   </div>
 );
@@ -59,7 +37,7 @@ export const ConferenceProgram = () => {
     {
       number: "01",
       title: "مهارات معاصرة في استدامة المشاريع",
-      date: "10.08.2024 12:00pm",
+      date: "12:00pm 10.08.2024",
       items: [
         { title: "قواعد في إدارة مشاريع مستدامة", presenter: "د. طارق السويدان", type: "ورشة تدريبية" },
         { title: "قوانين ومهارات في المؤسسية والقيادة بفعالية", presenter: "د. أكرم العدواني", type: "محاضرة تفاعلية" },
@@ -67,34 +45,15 @@ export const ConferenceProgram = () => {
         { title: "مهارات الاستدامة وقياس الأثر الاجتماعي في القرن 21", presenter: "د. سامي العدواني", type: "ورشة تدريبية" },
       ]
     },
-    {
-      number: "02",
-      title: "ركائز وأخلاقيات ومفاهيم متقدمة",
-      date: "10.08.2024 12:00pm",
-      items: [
-        { title: "الشروط الخمسة للمشاريع النهضوية", presenter: "د. عبد الرزاق عماري", type: "محاضرة تفاعلية" },
-      ],
-      isAccordion: true
-    },
-    {
-      number: "03",
-      title: "قوة الإمكان الشبابي",
-      date: "10.08.2024 12:00pm",
-      items: [
-        { title: "الإمكان الشبابي في بيئة الأعمال", presenter: "أ. إبراهيم الهزاني", type: "ورشة تدريبية" },
-      ],
-      isAccordion: true
-    },
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
+    <div className="py-16 px-4 md:px-8 lg:px-16 bg-white" dir="rtl">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">برنامج المؤتمر</h2>
         {events.map((event, index) => (
           <TimelineEvent key={index} {...event} />
         ))}
       </div>
-    </section>
+    </div>
   );
 };
