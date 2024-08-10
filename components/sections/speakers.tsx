@@ -104,7 +104,7 @@ export const Speakers = () => {
         }}>
           <CarouselContent>
             {speakers.map((speaker, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4 pl-10">
+              <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/4 pl-10">
                 <div className='rounded-3xl overflow-hidden border-none bg-white p-5 min-w-[269px]'>
                   <SpeakerCard {...speaker} />
                 </div>
