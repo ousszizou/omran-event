@@ -21,7 +21,7 @@ export default function Home() {
       <div className="flex flex-col items-center gap-24 pt-[136px] w-full bg-white">
         <OmranAnnualAward />
         <AwardsBadges />
-        <div className="flex flex-col items-center gap-8 relative mt-[520px]">
+        <div className="flex flex-col items-center gap-8 relative mt-16 md:mt-[32.5rem]">
           <Image src={omranRewardLogo} alt="Omran Reward Logo" width={172} height={412} />
           <div className='flex flex-col items-center gap-[2.5rem]'>
             <h3 className="text-[1.375rem] md:text-[1.75rem] md:leading-[2.5rem] font-bold text-[#252C32]">رشح مشروعك لجائزة عمران السنوية</h3>

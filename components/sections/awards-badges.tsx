@@ -7,16 +7,32 @@ import trophy2Src from "../../assets/trophy-2.jpg";
 import trophy3Src from "../../assets/trophy-3.jpg";
 import { MedalIcon } from "../../assets/medal-icon";
 import { motion, type MotionValue, useScroll, useTransform } from 'framer-motion';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
-const ParallaxColumn = ({ children, y }: { children: React.ReactNode, y: MotionValue<number> }) => (
-  // To do: add hook to update condition on window resize
-  <motion.div
-    style={window.innerWidth >= 768 ? { y } : undefined}
-    className="space-y-8 w-full"
-  >
-    {children}
-  </motion.div>
-);
+const ParallaxColumn = ({ children, y }: { children: React.ReactNode, y: MotionValue<number> }) => {
+  const isLargeScreen = useMediaQuery("(min-width: 768px)");
+                                 
+  return (
+    <motion.div
+      style={isLargeScreen ? { y } : undefined}
+      className="space-y-8 w-full"
+    >
+      {children}
+    </motion.div>
+  )
+};
+
+const AwardCard = ({ text, color }: {text: string; color: "white" | "beige" | "dark" | "light"}) => {
+  return (
+    <div className={`py-7 md:py-[2.5rem] pr-2.5 pl-3.5 md:px-5 rounded-2xl flex items-center gap-6 md:min-h-[130px]
+      ${color === "white" || color ===  "light" ? "text-[#6B7280]" : "text-white"}
+      ${color === "white" ? "border-lg border-solid border-[#AD9E68]" : color === "beige" ? "bg-[#AD9E68]" : color === "dark" ? "bg-[#252C32]" : "bg-[#AD9E6833]"}
+    `}>
+      <MedalIcon className='flex-none fill-current' />
+      <span className="text-lg font-bold text-balance">{text}</span>
+    </div>
+  )
+}
 
 export const AwardsBadges = () => {
   const gridRef = useRef(null);
@@ -35,67 +51,27 @@ export const AwardsBadges = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 mt-24" ref={gridRef}>
         <ParallaxColumn y={translateFirst}>
-          <div className="py-[2.5rem] px-5 rounded-2xl bg-[#AD9E68] text-white flex items-center gap-6 min-h-[130px]">
-            <MedalIcon className='flex-none fill-current' />
-            <span className="text-lg font-bold text-balance">
-              أفضل فريق مجتمع المدينة (تكريم مبادرة الفلوجة 2040).
-            </span>
-          </div>
-          <div className="py-[2.5rem] px-5 rounded-2xl text-[#6B7280] flex items-center gap-6 border-lg border-solid border-[#AD9E68] min-h-[130px]">
-            <MedalIcon className='flex-none fill-current' />
-            <span className="text-lg font-bold text-balance">
-              أفضل مشروع في الصحة والبيئة
-            </span>
-          </div>
-          <div className="py-[2.5rem] px-5 rounded-2xl bg-[#252C32] text-white flex items-center gap-6 min-h-[130px]">
-            <MedalIcon className='flex-none fill-current' />
-            <span className="text-lg font-bold text-balance">
-              أفضل مشروع في التعليم
-            </span>
-          </div>
-          <div className="py-[2.5rem] px-5 rounded-2xl text-[#6B7280] flex items-center gap-6 border-lg border-solid border-[#AD9E68] min-h-[130px]">
-            <MedalIcon className='flex-none fill-current' />
-            <span className="text-lg font-bold text-balance">
-              أفضل مشروع في الصحة والبيئة
-            </span>
-          </div>
+          <AwardCard text="أفضل فريق مجتمع المدينة (تكريم مبادرة الفلوجة 2040)." color="beige" />
+          <AwardCard text="أفضل مشروع في الصحة والبيئة" color="white" />
+          <AwardCard text="أفضل مشروع في التعليم" color="dark" />
+          <AwardCard text="أفضل مشروع في الصحة والبيئة" color="white" />
         </ParallaxColumn>
 
         <ParallaxColumn y={translateSecond}>
-          <div className="w-full h-40 md:h-2/4 relative">
+          <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy1Src} alt="Trophy 1" fill className="rounded-2xl object-cover" />
           </div>
-          <div className="py-[2.5rem] px-5 rounded-2xl bg-[#AD9E68] text-white flex items-center gap-6 min-h-[130px]">
-            <MedalIcon className='flex-none fill-current' />
-            <span className="text-lg font-bold text-balance">
-              أفضل مشروع في الفكر الحضاري
-            </span>
-          </div>
-          <div className="w-full h-40 md:h-3/4 relative">
+          <AwardCard text="فضل مشروع في الفكر الحضاري" color="beige" />
+          <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy2Src} alt="Trophy 2" fill className="rounded-2xl object-cover" />
           </div>
         </ParallaxColumn>
 
         <ParallaxColumn y={translateThird}>
-          <div className="py-[2.5rem] px-5 rounded-2xl bg-[#AD9E68] text-white flex items-center gap-6 min-h-[130px]">
-            <MedalIcon className='flex-none fill-current' />
-            <span className="text-lg font-bold text-balance">
-              أفضل مشروع في تكنولوجيا الآلة
-            </span>
-          </div>
-          <div className="py-[2.5rem] px-5 rounded-2xl text-[#6B7280] flex items-center gap-6 border-lg border-solid border-[#AD9E68] min-h-[130px]">
-            <MedalIcon className='flex-none fill-current' />
-            <span className="text-lg font-bold text-balance">
-              أفضل مشروع في الذكاء الاصطناعي
-            </span>
-          </div>
-          <div className="py-[2.5rem] px-5 rounded-2xl bg-[#252C32] text-white flex items-center gap-6 min-h-[130px]">
-            <MedalIcon className='flex-none fill-current' />
-            <span className="text-lg font-bold text-balance">
-              أفضل مشروع في تكنولوجيا الآلة
-            </span>
-          </div>
-          <div className="w-full h-40 md:h-4/6 relative">
+          <AwardCard text="افضل مشروع في تكنولوجيا الآلة" color="light" />
+          <AwardCard text="أفضل مشروع في الذكاء الاصطناعي" color="white" />
+          <AwardCard text="افضل مشروع في تكنولوجيا الآلة" color="dark" />
+          <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy3Src} alt="Trophy 3" fill className="rounded-2xl object-cover" />
           </div>
         </ParallaxColumn>
