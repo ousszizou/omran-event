@@ -22,7 +22,7 @@ export const Partners = () => {
   ];
 
   return (
-    <section className="py-24 mt-24 md:mt-[12.75rem] px-4 bg-[#EDE6CC]">
+    <section className="w-full py-24 mt-24 md:mt-[12.75rem] px-4 bg-[#EDE6CC]">
       <div className='container mx-auto'>
         <h2 className="font-bold text-center text-black text-[2.5rem] leading-[3.25rem]">فخورون بشركاء الإنجاز</h2>
 
