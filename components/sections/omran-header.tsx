@@ -4,13 +4,24 @@ import Image from "next/image";
 import backgroundSrc from "../../assets/header-bg.png";
 import { Button } from "../ui/button";
 import { useCountdown } from "@/hooks/use-countdown";
-import { motion, AnimatePresence } from 'framer-motion';
-import { CalendarDays, MapPin } from 'lucide-react';
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { CalendarDays, MapPin } from "lucide-react";
+import TextEffectAnimation from "../animations/TextEffectAnimation";
+import ShowInAnimation from "../animations/ShowInAnimation";
+import ScaleAnimation from "../animations/ScaleAnimation";
+import { useRef } from "react";
 
 export const OmranHeader = () => {
-  const { days, hours, minutes, seconds } = useCountdown(new Date('2024-08-11'));
+  const { days, hours, minutes, seconds } = useCountdown(
+    new Date("2024-08-11")
+  );
+  const container = useRef<HTMLDivElement>(null);
+  const isInView = useInView(container, { once: true });
   return (
-    <header className="relative w-full h-screen flex items-center justify-center">
+    <header
+      className="relative w-full h-screen flex items-center justify-center"
+      ref={container}
+    >
       <Image
         className="object-cover"
         src={backgroundSrc}
@@ -24,26 +35,138 @@ export const OmranHeader = () => {
       <div className="relative z-10 text-white text-center flex flex-col gap-[5.25rem]">
         <div className="flex flex-col gap-6 items-center">
           <p className="font-medium text-2xl leading-9 opacity-80">
-            مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر
+            <TextEffectAnimation
+              isInView={isInView}
+              text="مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر"
+            />
           </p>
-          <h1 className="text-[4rem] leading-[4.25rem] font-bold">مؤتمر عمران السنوي<br /> 2024</h1>
-          <Button className="bg-white text-[#011318] text-base hover:bg-[#E6EAEB] rounded-full border border-solid border-[#E6EAEB] min-w-[8.5rem] h-12 px-6 font-medium">سجل الآن</Button>
+          <h1 className="text-[4rem] leading-[4.25rem] font-bold">
+            <TextEffectAnimation
+              text="مؤتمر عمران السنوي"
+              delay={0.75}
+              duration={0.1}
+              isInView={isInView}
+            />
+            <br />
+            <TextEffectAnimation
+              reverse={true}
+              text="2024"
+              delay={1.6}
+              duration={0.15}
+              isInView={isInView}
+            />
+          </h1>
+          <ShowInAnimation delay={2} isInView={isInView}>
+            <Button className="bg-white text-[#011318] text-base hover:bg-[#E6EAEB] rounded-full border border-solid border-[#E6EAEB] min-w-[8.5rem] h-12 px-6 font-medium">
+              سجل الآن
+            </Button>
+          </ShowInAnimation>
         </div>
         <div className="font-bold text-base text-start flex items-start gap-[5.25rem]">
           <div className="flex items-start gap-4">
-            <MapPin />
-            <p>فندق istanbul baya fair & suite <br />- مدينة اسطنبول، تركيا.</p>
+            <ShowInAnimation
+              delay={2.2}
+              x={40}
+              y={0}
+              duration={0.3}
+              isInView={isInView}
+            >
+              <MapPin />
+            </ShowInAnimation>
+            <p>
+              <TextEffectAnimation
+                delay={2.5}
+                text="فندق "
+                isInView={isInView}
+              />
+              <TextEffectAnimation
+                reverse={true}
+                delay={2.65}
+                text="istanbul baya fair & suite"
+                isInView={isInView}
+              />
+              <br />
+              <TextEffectAnimation
+                delay={3.3}
+                text="- مدينة اسطنبول، تركيا."
+                isInView={isInView}
+              />
+            </p>
           </div>
           <div className="flex items-start gap-4">
-            <CalendarDays />
-            <p>10-11 أكتوبر 2024 • 11-12 أكتوبر 2024</p>
+            <ShowInAnimation
+              delay={2.2}
+              x={40}
+              y={0}
+              duration={0.3}
+              isInView={isInView}
+            >
+              <CalendarDays />
+            </ShowInAnimation>
+            <p>
+              <TextEffectAnimation
+                reverse={true}
+                delay={2.5}
+                text="10-11 "
+                isInView={isInView}
+              />
+              <TextEffectAnimation
+                delay={2.7}
+                text="أكتوبر "
+                isInView={isInView}
+              />
+              <TextEffectAnimation
+                reverse={true}
+                delay={2.85}
+                text="2024"
+                isInView={isInView}
+              />
+              <TextEffectAnimation delay={3} text=" • " isInView={isInView} />
+              <TextEffectAnimation
+                reverse={true}
+                delay={3.05}
+                text="11"
+                isInView={isInView}
+              />
+              <TextEffectAnimation
+                reverse={true}
+                delay={3.05}
+                text="-"
+                isInView={isInView}
+              />
+              <TextEffectAnimation
+                reverse={true}
+                delay={3.05}
+                text="12 "
+                isInView={isInView}
+              />
+              <TextEffectAnimation
+                delay={3.2}
+                text="أكتوبر "
+                isInView={isInView}
+              />
+              <TextEffectAnimation
+                reverse={true}
+                delay={3.3}
+                text="2024"
+                isInView={isInView}
+              />
+            </p>
           </div>
         </div>
         <div className="flex items-center justify-center space-x-4 rtl:space-x-reverse">
-          <CountdownUnit value={days} label="أيام" />
-          <CountdownUnit value={hours} label="ساعات" />
-          <CountdownUnit value={minutes} label="دقائق" />
-          <CountdownUnit value={seconds} label="ثواني" />
+          <ScaleAnimation delay={4} isInView={isInView}>
+            <CountdownUnit value={days} label="أيام" />
+          </ScaleAnimation>
+          <ScaleAnimation delay={4} isInView={isInView}>
+            <CountdownUnit value={hours} label="ساعات" />
+          </ScaleAnimation>
+          <ScaleAnimation delay={4} isInView={isInView}>
+            <CountdownUnit value={minutes} label="دقائق" />
+          </ScaleAnimation>
+          <ScaleAnimation delay={4} isInView={isInView}>
+            <CountdownUnit value={seconds} label="ثواني" />
+          </ScaleAnimation>
         </div>
       </div>
     </header>
