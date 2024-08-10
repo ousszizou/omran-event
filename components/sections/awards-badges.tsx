@@ -7,16 +7,20 @@ import trophy2Src from "../../assets/trophy-2.jpg";
 import trophy3Src from "../../assets/trophy-3.jpg";
 import { MedalIcon } from "../../assets/medal-icon";
 import { motion, type MotionValue, useScroll, useTransform } from 'framer-motion';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
-const ParallaxColumn = ({ children, y }: { children: React.ReactNode, y: MotionValue<number> }) => (
-  // To do: add hook to update condition on window resize
-  <motion.div
-    style={window.innerWidth >= 768 ? { y } : undefined}
-    className="space-y-8 w-full"
-  >
-    {children}
-  </motion.div>
-);
+const ParallaxColumn = ({ children, y }: { children: React.ReactNode, y: MotionValue<number> }) => {
+  const isLargeScreen = useMediaQuery("(min-width: 768px)");
+                                 
+  return (
+    <motion.div
+      style={isLargeScreen ? { y } : undefined}
+      className="space-y-8 w-full"
+    >
+      {children}
+    </motion.div>
+  )
+};
 
 export const AwardsBadges = () => {
   const gridRef = useRef(null);
