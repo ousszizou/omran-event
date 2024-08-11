@@ -54,7 +54,7 @@ export const AwardsBadges = () => {
           <AwardCard text="مجتمع المدينة" color="beige" />
           <AwardCard text="الصحة والبيئة" color="white" />
           <AwardCard text="التعليم" color="dark" />
-          <AwardCard text="الصحة والبيئة" color="white" />
+          <AwardCard text="خدمة الشأن العام" color="white" />
         </ParallaxColumn>
 
         <ParallaxColumn y={translateSecond}>
@@ -70,7 +70,7 @@ export const AwardsBadges = () => {
         <ParallaxColumn y={translateThird}>
           <AwardCard text="تكنولوجيا الآلة" color="light" />
           <AwardCard text="الذكاء الاصطناعي" color="white" />
-          <AwardCard text="تكنولوجيا الآلة" color="dark" />
+          <AwardCard text="التربية وتنشئة الأجيال" color="dark" />
           <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy3Src} alt="Trophy 3" fill className="rounded-2xl object-cover" />
           </div>
