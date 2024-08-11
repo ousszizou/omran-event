@@ -9,6 +9,7 @@ import feature2Src from "../../assets/features/feature-2.jpg";
 import feature3Src from "../../assets/features/feature-3.jpg";
 import feature4Src from "../../assets/features/feature-4.jpg";
 import omranLogoSrc from "../../assets/omran-letter-logo.svg";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 
 const features = [
   {
@@ -34,6 +35,24 @@ const features = [
     description:
       "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
     imageSrc: feature4Src,
+  },
+  {
+    title: "الدورات والورشات التدريبية",
+    description:
+      "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
+    imageSrc: feature1Src,
+  },
+  {
+    title: "المحاضرات التفاعلية",
+    description:
+      "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
+    imageSrc: feature2Src,
+  },
+  {
+    title: "جلسات الإستشارة والمرافقة",
+    description:
+      "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
+    imageSrc: feature3Src,
   },
 ];
 
@@ -63,7 +82,7 @@ export const WhyAnnualConference = () => {
   return (
     <section className="bg-[#AD9E68] w-full" ref={container}>
       <div className="pt-[6.125rem] pb-[4.75rem] md:pb-[9.625rem] relative container mx-auto">
-        <div className="absolute left-5 z-10">
+        <div className="absolute top-40 left-6 z-10">
           <Image
             src={omranLogoSrc}
             alt="Omran Logo"
@@ -81,7 +100,7 @@ export const WhyAnnualConference = () => {
               duration={0.6}
               isInView={isInView}
             >
-              <h2 className="text-[2.5rem] leading-[3.25rem] font-bold text-white">
+              <h2 className="text-[2.5rem] leading-[3.25rem] font-bold text-white mb-6">
                 لماذا المؤتمر السنوي؟
               </h2>
             </ShowInAnimation>
@@ -100,21 +119,31 @@ export const WhyAnnualConference = () => {
               </p>
             </ShowInAnimation>
           </div>
-          <div className="mt-[7.5rem] md:mt-[6.25rem] grid grid-cols-1 md:grid-cols-[minmax(0,17rem)_minmax(0,17rem)] lg:grid-cols-4 gap-x-4 lg:gap-8 w-fit mx-auto">
-            {features.map((feature, index) => (
-              <ShowInAnimation
-                key={feature.title}
-                x={0}
-                y={60}
-                duration={0.6}
-                delay={1.1 + index * 0.2}
-                isInView={isInView}
-                className="z-30"
-              >
-                <ConferenceFeature {...feature} />
-              </ShowInAnimation>
-            ))}
-          </div>
+          <Carousel className="w-full mt-[7.5rem] md:mt-[6.25rem] z-10" opts={{
+            direction: "rtl",
+            slidesToScroll: 1,
+          }}>
+            <CarouselContent>
+              {features.map((feature, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/4 pl-10">
+                  <ShowInAnimation
+                    key={feature.title}
+                    x={0}
+                    y={60}
+                    duration={0.6}
+                    delay={1.1 + index * 0.2}
+                    isInView={isInView}
+                  >
+                    <ConferenceFeature {...feature} />
+                  </ShowInAnimation>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="relative flex md:justify-center mt-16 space-x-16">
+              <CarouselPrevious className='relative bg-white border-none hover:bg-white/80 h-10 w-10' />
+              <CarouselNext className='relative bg-white border-none hover:bg-white/80 h-10 w-10' />
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>
