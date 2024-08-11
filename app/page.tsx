@@ -9,6 +9,7 @@ import { OmranHeader } from "@/components/sections/omran-header";
 import omranRewardLogo from "../assets/omran-reward-logo.svg";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
+import { PricingSection } from "@/components/sections/pricing";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Speakers />
       <div className="flex flex-col items-center gap-24 pt-[136px] w-full bg-white">
         <OmranAnnualAward />
+        <PricingSection />
         <AwardsBadges />
         <div className="flex flex-col items-center gap-8 relative mt-16 md:mt-[32.5rem]">
           <Image src={omranRewardLogo} alt="Omran Reward Logo" width={172} height={412} />
