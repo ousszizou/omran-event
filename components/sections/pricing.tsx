@@ -1,8 +1,7 @@
 import React from "react";
 import { Check, Minus } from "lucide-react";
 
-export const PricingSection = () => {
-  const plans = [
+const plans = [
     { name: "نحاسي", price: "$150" },
     { name: "فضي", price: "$300" },
     { name: "ذهبي", price: "$500" },
@@ -70,6 +69,8 @@ export const PricingSection = () => {
     },
   ];
 
+export const PricingSection = () => {
+  
   return (
     <section className="container mx-auto py-16">
       <p className="text-center text-sm font-semibold text-[#AD9E68] mb-2">
