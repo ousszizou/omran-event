@@ -13,7 +13,7 @@ import { useRef } from "react";
 
 export const OmranHeader = () => {
   const { days, hours, minutes, seconds } = useCountdown(
-    new Date("2024-08-11"),
+    new Date("2024-08-15"),
   );
   const container = useRef<HTMLDivElement>(null);
   const isInView = useInView(container, { once: true });
@@ -160,9 +160,6 @@ export const OmranHeader = () => {
           </ScaleAnimation>
           <ScaleAnimation delay={4} isInView={isInView}>
             <CountdownUnit value={minutes} label="دقائق" />
-          </ScaleAnimation>
-          <ScaleAnimation delay={4} isInView={isInView}>
-            <CountdownUnit value={seconds} label="ثواني" />
           </ScaleAnimation>
         </div>
       </div>
