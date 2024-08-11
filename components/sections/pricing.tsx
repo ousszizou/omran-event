@@ -83,9 +83,9 @@ export const PricingSection = () => {
         اختر الباقة المناسبة لاحتياجاتك وأهدافك في المؤتمر
       </p>
 
-      <div className="grid grid-cols-4 relative">
+      <div className="hidden md:grid grid-cols-4 relative">
         {/* Highlighted background for Gold column (last one) */}
-        <div className="absolute top-0 bottom-0 left-0 right-3/4 bg-[#AD9E68]/5 border border-[#AD9E68]/30 rounded-2xl" />
+        <div className="none md:block absolute top-0 bottom-0 left-0 right-3/4 bg-[#AD9E68]/5 border border-[#AD9E68]/30 rounded-2xl" />
 
         <div className="col-span-1" />
         {plans.map((plan, index) => (
@@ -146,6 +146,36 @@ export const PricingSection = () => {
               </div>
             </div>
           </React.Fragment>
+        ))}
+      </div>
+      
+      <div className="max-w-lg mx-auto md:hidden grid grid-cols-1 gap-6">
+        {plans.map((plan, planIndex) => (
+          <div key={planIndex} className={`p-6 sm:p-8 rounded-2xl ${plan.name === "ذهبي" && "bg-[#AD9E68]/5 border border-[#AD9E68]/30"}`}>
+            <h3 className="text-sm">
+              {plan.name}
+            </h3>
+            <p className="mb-8 mt-2">
+              <span className="text-4xl">{plan.price}</span>
+              <span>/للمؤتمر</span>
+            </p>
+            <button
+              type="button"
+              className={`w-full py-2 px-6 rounded-full ${planIndex === 2 ? "bg-[#AD9E68] text-white" : "bg-white text-[#AD9E68] border border-[#AD9E68] hover:bg-[#AD9E68] hover:text-white"}`}
+            >
+              اشترك الآن
+            </button> 
+            <div className="mt-10 space-y-2">
+              {features.filter((feature, featureIndex) => (
+                feature[["copper", "silver", "gold"][planIndex]]
+              )).map((feature) => (
+                <div className="flex gap-2 text-sm sm:text-base">
+                  <FeatureItem value={feature[["copper", "silver", "gold"][planIndex]]} included />
+                  <span>{feature.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>
