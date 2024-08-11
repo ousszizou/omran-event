@@ -47,30 +47,30 @@ export const AwardsBadges = () => {
 
   return (
     <section className="container mx-auto">
-      <h2 className="text-[#252C32] text-[1.75rem] leading-[2.5rem] font-bold">أوسمة التكريم</h2>
+      <h2 className="text-[#252C32] text-[1.75rem] leading-[2.5rem] font-bold">أوسمة التكريم لأفضل مشروع في</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 mt-24" ref={gridRef}>
         <ParallaxColumn y={translateFirst}>
-          <AwardCard text="أفضل فريق مجتمع المدينة" color="beige" />
-          <AwardCard text="أفضل مشروع في الصحة والبيئة" color="white" />
-          <AwardCard text="أفضل مشروع في التعليم" color="dark" />
-          <AwardCard text="أفضل مشروع في الصحة والبيئة" color="white" />
+          <AwardCard text="مجتمع المدينة" color="beige" />
+          <AwardCard text="الصحة والبيئة" color="white" />
+          <AwardCard text="التعليم" color="dark" />
+          <AwardCard text="الصحة والبيئة" color="white" />
         </ParallaxColumn>
 
         <ParallaxColumn y={translateSecond}>
           <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy1Src} alt="Trophy 1" fill className="rounded-2xl object-cover" />
           </div>
-          <AwardCard text="أفضل مشروع في الفكر الحضاري" color="beige" />
+          <AwardCard text="الفكر الحضاري" color="beige" />
           <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy2Src} alt="Trophy 2" fill className="rounded-2xl object-cover" />
           </div>
         </ParallaxColumn>
 
         <ParallaxColumn y={translateThird}>
-          <AwardCard text="أفضل مشروع في تكنولوجيا الآلة" color="light" />
-          <AwardCard text="أفضل مشروع في الذكاء الاصطناعي" color="white" />
-          <AwardCard text="أفضل مشروع في تكنولوجيا الآلة" color="dark" />
+          <AwardCard text="تكنولوجيا الآلة" color="light" />
+          <AwardCard text="الذكاء الاصطناعي" color="white" />
+          <AwardCard text="تكنولوجيا الآلة" color="dark" />
           <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy3Src} alt="Trophy 3" fill className="rounded-2xl object-cover" />
           </div>
