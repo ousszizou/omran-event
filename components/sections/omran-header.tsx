@@ -102,51 +102,9 @@ export const OmranHeader = () => {
             </ShowInAnimation>
             <p>
               <TextEffectAnimation
-                reverse={true}
-                delay={2.5}
-                text="10-11 "
+                text="11 أكتوبر 2024 إلى 13 أكتوبر 2024"
                 isInView={isInView}
-              />
-              <TextEffectAnimation
-                delay={2.7}
-                text="أكتوبر "
-                isInView={isInView}
-              />
-              <TextEffectAnimation
-                reverse={true}
-                delay={2.85}
-                text="2024"
-                isInView={isInView}
-              />
-              <TextEffectAnimation delay={3} text=" • " isInView={isInView} />
-              <TextEffectAnimation
-                reverse={true}
-                delay={3.05}
-                text="11"
-                isInView={isInView}
-              />
-              <TextEffectAnimation
-                reverse={true}
-                delay={3.05}
-                text="-"
-                isInView={isInView}
-              />
-              <TextEffectAnimation
-                reverse={true}
-                delay={3.05}
-                text="12 "
-                isInView={isInView}
-              />
-              <TextEffectAnimation
-                delay={3.2}
-                text="أكتوبر "
-                isInView={isInView}
-              />
-              <TextEffectAnimation
-                reverse={true}
-                delay={3.3}
-                text="2024"
-                isInView={isInView}
+                delay={3}
               />
             </p>
           </div>
