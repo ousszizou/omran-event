@@ -72,7 +72,7 @@ const plans = [
 export const PricingSection = () => {
   
   return (
-    <section className="container mx-auto py-16">
+    <section className="container mx-auto py-16" id="pricing">
       <h1 className="text-[#252C32] text-[2.5rem] leading-[3.25rem] font-bold text-center mb-4">
         باقات المشاركة
       </h1>

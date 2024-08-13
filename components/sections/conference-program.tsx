@@ -131,7 +131,7 @@ export const ConferenceProgram = () => {
   ];
 
   return (
-    <div className="pt-16 bg-white" dir="rtl">
+    <div className="pt-16 bg-white" dir="rtl" id="program">
       <div className="max-w-5xl mx-auto">
         <h1 className='text-center text-[2.5rem] leading-[3.25rem] font-bold mb-14 md:mb-[8.5rem]'>برنامج المؤتمر</h1>
         {events.map((event, index) => (

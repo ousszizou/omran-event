@@ -4,7 +4,7 @@ import OmranAnnualAwardImage from "../../assets/omran-annual-award.svg";
 
 export const OmranAnnualAward = () => {
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto" id="award">
       <div className="flex flex-col md:flex-row gap-4 items-center md:items-start">
         <div className="md:w-3/5 text-[#6B7280] order-2 md:order-1">
           <h2 className="text-2xl md:text-[2.5rem] leading-[3.25rem] font-bold mb-6 text-[#252C32]">جائزة عمران السنوية</h2>

@@ -85,7 +85,7 @@ export const Speakers = () => {
   ];
 
   return (
-    <section className="h-[1158px] bg-[#EDE6CC] w-full">
+    <section className="h-[1158px] bg-[#EDE6CC] w-full" id="speakers">
       <div className="container mx-auto pt-[138px] relative">
         <div className="absolute top-16 left-0">
           <Image src={vector1Src} alt="Vector" width={290} height={246} quality={100} />

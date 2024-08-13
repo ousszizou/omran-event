@@ -14,6 +14,15 @@ import { Separator } from "./ui/separator";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const navHeight = 120;
+    const y = element.getBoundingClientRect().top + window.scrollY - navHeight;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+};
+
 export default function Navbar() {
   const [navStatus, setNavStatus] = useState("visible");
   const { scrollY } = useScroll();
@@ -43,7 +52,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex h-[120px] max-w-7xl items-center justify-between px-4 md:px-6">
         <div className="flex items-center justify-between gap-[23px]">
-          <Link href="#" className="flex items-center" prefetch={false}>
+          <Link href="/" className="flex items-center" prefetch={false}>
             <OmranLogo />
           </Link>
           <Separator
@@ -57,19 +66,19 @@ export default function Navbar() {
           </h1>
         </div>
         <nav className="hidden items-center gap-12 lg:flex">
-          <Link href="#" className="text-sm font-medium" prefetch={false}>
+          <Link href="/" className="text-sm font-medium" prefetch={false}>
             الرئيسية
           </Link>
-          <Link href="#" className="text-sm font-medium" prefetch={false}>
+          <Link href="#program" className="text-sm font-medium" prefetch={false}>
             البرنامج
           </Link>
-          <Link href="#" className="text-sm font-medium" prefetch={false}>
+          <Link href="#speakers" className="text-sm font-medium" prefetch={false}>
             المتحدثون
           </Link>
-          <Link href="#" className="text-sm font-medium" prefetch={false}>
+          <Link href="#pricing" className="text-sm font-medium" prefetch={false}>
             باقات الاشتراك
           </Link>
-          <Link href="#" className="text-sm font-medium" prefetch={false}>
+          <Link href="#award" className="text-sm font-medium" prefetch={false}>
             الجائزة السنوية
           </Link>
         </nav>
@@ -81,7 +90,7 @@ export default function Navbar() {
       </div>
       <Sheet>
         <SheetTrigger asChild>
-          <button className="fixed top-[2.9375rem] left-4 md:left-6 lg:hidden">
+          <button type="button" className="fixed top-[2.9375rem] left-4 md:left-6 lg:hidden">
             <MenuIcon className="h-6 w-6" />
             <span className="sr-only">Toggle navigation</span>
           </button>
