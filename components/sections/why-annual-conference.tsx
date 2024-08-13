@@ -81,7 +81,7 @@ export const WhyAnnualConference = () => {
   const isInView = useInView(container, { once: true });
   return (
     <section className="bg-[#AD9E68] w-full" ref={container}>
-      <div className="pt-[6.125rem] pb-[4.75rem] md:pb-[9.625rem] relative container mx-auto">
+      <div className="pt-16 pb-8 md:pb-16 relative container mx-auto">
         <div className="absolute top-40 left-6 z-10">
           <Image
             src={omranLogoSrc}
