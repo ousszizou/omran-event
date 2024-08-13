@@ -18,11 +18,11 @@ export default function Home() {
       <OmranHeader />
       <WhyAnnualConference />
       <ConferenceProgram />
-      <CallToAction />
       <Speakers />
+      <CallToAction />
       <div className="flex flex-col items-center gap-24 pt-[136px] w-full bg-white">
-        <OmranAnnualAward />
         <PricingSection />
+        <OmranAnnualAward />
         <AwardsBadges />
         <div className="flex flex-col items-center gap-8 relative mt-16 md:mt-[32.5rem]">
           <Image src={omranRewardLogo} alt="Omran Reward Logo" width={172} height={412} />
