@@ -69,7 +69,7 @@ const ConferenceFeature = ({ title, description, imageSrc }: Feature) => (
     />
     <div className="p-5 lg:p-[1.375rem] relative bottom-8 bg-white rounded-2xl">
       <h3 className="text-[#252C32] text-base font-bold mb-4">{title}</h3>
-      <p className="text-[#6B7280] text-[0.625rem] leading-[0.875rem] font-medium">
+      <p className="text-[#6B7280] text-xs font-medium">
         {description}
       </p>
     </div>
@@ -122,7 +122,7 @@ export const WhyAnnualConference = () => {
           }}>
             <CarouselContent>
               {features.map((feature, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/4 pl-10">
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4 pl-10">
                   <ShowInAnimation
                     key={feature.title}
                     x={0}
