@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import LaunchGoodPartner from "../../assets/partners/launch-good.png";
 import RyadiPartner from "../../assets/partners/ryadi.png";
 import MiamiPartner from "../../assets/partners/miami-business-solutions.png";
@@ -11,6 +11,7 @@ import FennecPartner from "../../assets/partners/fennec-technologies.png";
 import LastPartner from "../../assets/partners/last-partner.png";
 import { motion, useInView } from "framer-motion";
 import ShowInAnimation from "../animations/ShowInAnimation";
+import { Button } from "../ui/button";
 
 const PartnerLogo = ({ src, alt }: { src: StaticImageData; alt: string }) => (
   <Image src={src} alt={alt} width={148.61} height={170.42} />
@@ -75,6 +76,12 @@ export const Partners = () => {
             </ul>
           </div>
         </ShowInAnimation>
+
+        <div className="flex justify-center mt-16">
+          <Button className="text-[#AD9E68] bg-white rounded-full text-base px-[1.125rem] py-1.5 md:h-12 md:px-8 font-medium w-fit hover:text-white">
+            التحق برعاة المُؤتمر
+          </Button>
+        </div>
       </div>
     </section>
   );
