@@ -73,11 +73,8 @@ export const PricingSection = () => {
   
   return (
     <section className="container mx-auto py-16">
-      <p className="text-center text-sm font-semibold text-[#AD9E68] mb-2">
-        باقات المشاركة
-      </p>
       <h1 className="text-[#252C32] text-[2.5rem] leading-[3.25rem] font-bold text-center mb-4">
-        خيارات متنوعة لتلبية احتياجاتك
+        باقات المشاركة
       </h1>
       <p className="max-w-3xl mx-auto text-center text-[#252C32] text-lg font-normal mb-24">
         اختر الباقة المناسبة لاحتياجاتك وأهدافك في المؤتمر

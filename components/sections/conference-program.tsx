@@ -6,11 +6,11 @@ const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hide
 
   const pointerClasses = isFirstInAccordion
     ? eventNumber === "02"
-      ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[0.3rem] -left-[4.8125rem] sm:-left-[4.875rem] lg:-right-[1.75rem]"
+      ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[1.5rem] -left-[4.8125rem] sm:-left-[4.875rem] lg:-right-[1.75rem]"
       : eventNumber === "03"
-        ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[0.3rem] -left-[4.8125rem] sm:-left-[4.875rem] lg:-right-[1.75rem]"
+        ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[1.5rem] -left-[4.8125rem] sm:-left-[4.875rem] lg:-right-[1.75rem]"
         : "-top-[10rem] sm:top-3 -left-[4.8125rem] lg:-right-3"
-    : "top-3 -left-2 lg:-right-3";
+    : "-top-[6px] -left-2 lg:-right-3";
 
   return (
     <div className="relative mb-12 flex-grow">
@@ -26,47 +26,55 @@ const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hide
   )
 };
 
-const TimelineEvent = ({ number, title, date, items }) => (
-  <div className={`px-4 sm:px-0 lg:px-4 flex flex-col lg:flex-row relative ${+number === 2 ? 'mt-8 -top-20' : (+number === 3 ? '-top-32' : '')
-    }`}>
-    <div className="lg:w-1/2 flex-1 flex flex-col items-start gap-4 relative">
-      <div className="xl:absolute order-1 lg:order-3 xl:-right-32 top-5 text-[#AD9E68]/40 font-medium text-[2.625rem] lg:text-8xl">
-        {number}
+const TimelineEvent = ({ number, title, date, items }) => {
+  const dayNumber = {
+    "01": "الأول",
+    "02": "الثاني",
+    "03": "الثالث"
+  }[number];
+
+  return (
+    <div className={`px-4 sm:px-0 lg:px-4 flex flex-col lg:flex-row relative ${+number === 2 ? 'mt-8 -top-20' : (+number === 3 ? '-top-32' : '')
+      }`}>
+      <div className="lg:w-1/2 flex-1 flex flex-col items-start gap-4 relative">
+        <div className="xl:absolute order-1 lg:order-3 xl:-right-32 top-5 text-[#AD9E68]/40 font-medium text-[2.625rem] lg:text-8xl">
+          {number}
+        </div>
+        <Separator orientation='horizontal' className='bg-[#AD9E68] h-[2px]' />
+        <h3 className="sm:text-3xl ml-2 lg:ml-0 lg:text-[2.5rem] lg:leading-[3.25rem] font-bold text-[#AD9E68] text-right text-balance mb-4">{title}</h3>
+        <p className="text-sm text-[#252C32]"><span className='text-[#AD9E68] font-bold'>اليوم {dayNumber}:</span> {date}</p>
       </div>
-      <p className="text-sm text-gray-500 lg:order-1">{date}</p>
-      <Separator orientation='horizontal' className='bg-[#AD9E68] h-[2px] lg:order-2' />
-      <h3 className="sm:text-3xl ml-2 lg:ml-0 lg:text-[2.5rem] order-2 lg:order-4 lg:leading-[3.25rem] font-bold text-[#AD9E68] text-right text-balance">{title}</h3>
-    </div>
-    <Separator orientation='vertical' className='bg-[#AD9E68] w-[0.125rem] absolute lg:static inset-y-0 left-4 sm:left-0 lg:h-auto mt-9' />
-    <div className="lg:w-1/2 flex-1 mt-[1.1rem] ms-[0.15rem]">
-      <div className={`${+number === 2 ? 'pb-32' : +number === 3 ? 'pb-0' : 'pb-16'} flex flex-col`}>
-        {items.length === 1 && items[0].isAccordion ? (
-          <Accordion type="single" collapsible className="w-full lg:ms-4">
-            <AccordionItem value="item-1" className='bg-[#AD9E68]/20 ml-[1.375rem] rounded-2xl'>
-              <AccordionTrigger className="text-[#252C32] text-[1.375rem] leading-[2rem] text-right mb-4 text-balance font-bold hover:no-underline">
-                <TimelineItem {...items[0]} isFirstInAccordion={true} eventNumber={number} />
-              </AccordionTrigger>
-              <AccordionContent>
-                {items[0].subItems.map((subItem, index) => (
-                  <TimelineItem key={index} {...subItem} eventNumber={number} hideCircle />
-                ))}
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        ) : (
-          items.map((item, index) => <TimelineItem key={index} {...item} eventNumber={number} />)
-        )}
+      <Separator orientation='vertical' className='bg-[#AD9E68] w-[0.125rem] absolute lg:static inset-y-0 left-4 sm:left-0 lg:h-auto' />
+      <div className="lg:w-1/2 flex-1 ms-[0.15rem]">
+        <div className={`${+number === 2 ? 'pb-32' : +number === 3 ? 'pb-0' : 'pb-16'} flex flex-col`}>
+          {items.length === 1 && items[0].isAccordion ? (
+            <Accordion type="single" collapsible className="w-full lg:ms-4">
+              <AccordionItem value="item-1" className='bg-[#AD9E68]/20 ml-[1.375rem] rounded-2xl'>
+                <AccordionTrigger className="text-[#252C32] text-[1.375rem] leading-[2rem] text-right mb-4 text-balance font-bold hover:no-underline">
+                  <TimelineItem {...items[0]} isFirstInAccordion={true} eventNumber={number} />
+                </AccordionTrigger>
+                <AccordionContent>
+                  {items[0].subItems.map((subItem, index) => (
+                    <TimelineItem key={index} {...subItem} eventNumber={number} hideCircle />
+                  ))}
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          ) : (
+            items.map((item, index) => <TimelineItem key={index} {...item} eventNumber={number} />)
+          )}
+        </div>
       </div>
     </div>
-  </div>
-);
+  )
+}
 
 export const ConferenceProgram = () => {
   const events = [
     {
       number: "01",
       title: "مهارات معاصرة في استدامة المشاريع",
-      date: "10.08.2024 12:00pm",
+      date: "11 أغسطس 2024",
       items: [
         { title: "قواعد في إدارة مشاريع مستدامة", presenter: "د. طارق السويدان", type: "دورة تدريبية" },
         { title: "قوانين ومهارات في المؤسسية والقيادة بفعالية", presenter: "د. أكرم العدلوني", type: "محاضرة تدريبية" },
@@ -77,7 +85,7 @@ export const ConferenceProgram = () => {
     {
       number: "02",
       title: "ركائز وأخلاقيات ومفاهيم متقدمة",
-      date: "10.08.2024 12:00pm",
+      date: "12 أغسطس 2024",
       items: [
         {
           title: "الشروط الخمسة للمشاريع النهضوية",
@@ -94,7 +102,7 @@ export const ConferenceProgram = () => {
     {
       number: "03",
       title: "قوة الإمكان الشبابي",
-      date: "10.08.2024 12:00pm",
+      date: "13 أغسطس 2024",
       items: [
         {
           title: "الإمكان الشبابي في بيئة الأعمال",

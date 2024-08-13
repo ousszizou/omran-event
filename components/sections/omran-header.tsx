@@ -102,7 +102,7 @@ export const OmranHeader = () => {
             </ShowInAnimation>
             <p>
               <TextEffectAnimation
-                text="11 أكتوبر 2024 إلى 13 أكتوبر 2024"
+                text="11 إلى 13 أكتوبر 2024"
                 isInView={isInView}
                 delay={3}
               />
@@ -111,13 +111,13 @@ export const OmranHeader = () => {
         </div>
         <div className="flex items-center justify-center gap-2 sm:gap-4 rtl:space-x-reverse">
           <ScaleAnimation delay={4} isInView={isInView}>
-            <CountdownUnit value={days} label="أيام" />
+            <CountdownUnit value={minutes} label="دقائق" />
           </ScaleAnimation>
           <ScaleAnimation delay={4} isInView={isInView}>
             <CountdownUnit value={hours} label="ساعات" />
           </ScaleAnimation>
           <ScaleAnimation delay={4} isInView={isInView}>
-            <CountdownUnit value={minutes} label="دقائق" />
+            <CountdownUnit value={days} label="أيام" />
           </ScaleAnimation>
         </div>
       </div>

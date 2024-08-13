@@ -61,13 +61,13 @@ export default function Navbar() {
             الرئيسية
           </Link>
           <Link href="#" className="text-sm font-medium" prefetch={false}>
-            عن المؤتمر
-          </Link>
-          <Link href="#" className="text-sm font-medium" prefetch={false}>
-            برنامح المؤتمر
+            البرنامج
           </Link>
           <Link href="#" className="text-sm font-medium" prefetch={false}>
             المتحدثون
+          </Link>
+          <Link href="#" className="text-sm font-medium" prefetch={false}>
+            باقات الاشتراك
           </Link>
           <Link href="#" className="text-sm font-medium" prefetch={false}>
             الجائزة السنوية
