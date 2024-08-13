@@ -12,10 +12,11 @@ export const CallToAction = () => {
   const isInView = useInView(container, { once: true });
   return (
     <section
-      className="w-full lg:py-[4.6875rem] pt-24 pb-[7.25rem] bg-gradient-to-t from-[#252C32] from-15% via-[#708698] via-100% text-white"
+      className="w-full lg:py-[4.6875rem] pt-24 pb-[7.25rem] text-white bg-[url('/conference.jpg')] bg-no-repeat bg-center bg-cover relative"
       ref={container}
     >
-      <div className="container mx-auto px-4">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#252C32]/90 from-15% via-[#708698]/90 via-100% w-full h-full" />
+      <div className="container mx-auto px-4 relative z-20">
         <div className="flex flex-col lg:flex-row gap-[7.75rem] lg:gap-0 items-center justify-between">
           <div className="text-right max-w-2xl mb-8 md:mb-0">
             <ShowInAnimation
