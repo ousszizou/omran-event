@@ -26,14 +26,6 @@ export const OmranAnnualAward = () => {
             </ul>
             <li>المشاركة بالعرض في المؤتمر</li>
           </ul>
-          <ul className='text-[#252C32] font-medium md:font-normal list-disc list-inside space-y-4 mt-8'>
-            <li>
-              رسوم التسجيل (حضوريا): المبيت والإطعام 500 دولار/بدون مبيت وإطعام: 200 دولار
-            </li>
-            <li>
-              توفير مساحات لعرض الخدمات والمنتجات والإعلانات الترويجية
-            </li>
-          </ul>
         </div>
         <div className="md:w-2/5 order-1 md:order-2 mb-8 md:mb-0">
           <Image
