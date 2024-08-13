@@ -12,13 +12,24 @@ const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hide
         : "-top-[10rem] sm:top-3 -left-[4.8125rem] lg:-right-3"
     : "-top-[6px] -left-2 lg:-right-3";
 
+  const getBgColor = () => {
+    switch (type) {
+      case 'محاضرة تدريبية':
+        return 'bg-[#AD9E68]';
+      case 'ورشة تدريبية':
+        return 'bg-[#6B7280]';
+      default:
+        return 'bg-gradient-to-r from-[#AD9E68] from-0% to-[#47412B] to-100%';
+    }
+  };
+
   return (
     <div className="relative mb-12 flex-grow">
       <div className={`absolute w-4 h-4 bg-[#AD9E68] rounded-full ${hideCircle ? "hidden" : pointerClasses}`} />
       <div className={`${eventNumber !== "01" ? 'ps-4 lg:ps-8' : 'lg:ps-16'}`}>
         <h4 className="md:ml-2 lg:ml-0 text-[#252C32] md:text-[1.375rem] md:leading-[2rem] text-right mb-7 lg:mb-8 text-balance font-bold">{title}</h4>
         <div className="flex gap-4 sm:gap-7 md:gap-8 flex-col sm:flex-row items-start lg:items-center">
-          <div className='text-white rounded-full px-5 py-2 bg-gradient-to-r from-[#AD9E68] from-0% to-[#47412B] to-100% text-xs'>{type}</div>
+          <div className={`text-white rounded-full px-5 py-2 ${getBgColor()} text-xs`}>{type}</div>
           <p className="text-xs md:text-lg text-[#AD9E68] text-right font-medium">{presenter}</p>
         </div>
       </div>
@@ -78,7 +89,7 @@ export const ConferenceProgram = () => {
       items: [
         { title: "قواعد في إدارة مشاريع مستدامة", presenter: "د. طارق السويدان", type: "دورة تدريبية" },
         { title: "قوانين ومهارات في المؤسسية والقيادة بفعالية", presenter: "د. أكرم العدلوني", type: "محاضرة تدريبية" },
-        { title: "مهارات الريادة في السوق", presenter: "", type: "ورشة تدريبية" },
+        { title: "مهارات الريادة في السوق", presenter: "د. هيثم بابكر", type: "ورشة تدريبية" },
         { title: "مهارات الاستدامة وقياس الأثر الاجتماعي في القرن 21", presenter: "د. سامي العدواني", type: "ورشة تدريبية" },
       ]
     },
