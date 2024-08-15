@@ -6,9 +6,13 @@ import * as React from 'react';
 export function WordsPullUp({
   text,
   className = '',
+  delay = 0.1,
+  duration = 0.5,
 }: {
   text: string;
   className?: string;
+    delay?: number;
+    duration?: number;
 }) {
   const splittedText = text.split(' ');
 
@@ -18,18 +22,20 @@ export function WordsPullUp({
       y: 0,
       opacity: 1,
       transition: {
-        delay: i * 0.1,
+        delay: i * delay,
+        duration: duration,
+        ease: 'easeOut',
       },
     }),
   };
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-wrap justify-center">
       {splittedText.map((current, i) => (
         <motion.div
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-          key={i}
+          key={`${current}-${i}`}
           ref={ref}
           variants={pullupVariant}
           initial="initial"
