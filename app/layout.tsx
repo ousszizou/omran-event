@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
-const readex_pro = Readex_Pro({ subsets: ["latin"] });
+const readex_pro = Readex_Pro({ subsets: ["latin", "arabic"] });
 
 export const metadata: Metadata = {
   title: "مؤتمر عمران السّنوي 2024 | مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر",

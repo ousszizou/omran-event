@@ -46,7 +46,7 @@ export const OmranHeader = () => {
               <TextEffectAnimation
                 reverse={true}
                 text="2024"
-                delay={1.6}
+                delay={0.75}
                 duration={0.15}
                 isInView={isInView}
               />
