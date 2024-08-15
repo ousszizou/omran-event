@@ -52,7 +52,7 @@ export const OmranHeader = () => {
               />
             </h1>
           </TextFade>
-          <ShowInAnimation delay={2} isInView={isInView}>
+          <ShowInAnimation delay={1.5} isInView={isInView}>
             <Button className="bg-white text-[#011318] text-base hover:bg-[#E6EAEB] rounded-full border border-solid border-[#E6EAEB] md:min-w-[8.5rem] py-1.5 md:py-0 md:h-12 px-[1.125rem] md:px-6 font-medium">
               سجل الآن
             </Button>
@@ -69,25 +69,19 @@ export const OmranHeader = () => {
             >
               <MapPin />
             </ShowInAnimation>
-            <p>
-              <TextEffectAnimation
-                delay={2.5}
-                text="فندق "
-                isInView={isInView}
-              />
-              <TextEffectAnimation
-                reverse={true}
-                delay={2.65}
-                text="istanbul baya fair & suite"
-                isInView={isInView}
-              />
-              <br />
-              <TextEffectAnimation
-                delay={3.3}
-                text="- مدينة اسطنبول، تركيا."
-                isInView={isInView}
-              />
-            </p>
+            <ShowInAnimation
+              delay={2.2}
+              x={40}
+              y={0}
+              duration={0.3}
+              isInView={isInView}
+            >
+              <div className="flex flex-col items-start">
+
+                <p>فندق istanbul baya fair & suite</p>
+                <p>- مدينة اسطنبول، تركيا.</p>
+              </div>
+            </ShowInAnimation>
           </div>
           <div className="flex items-start gap-4">
             <ShowInAnimation
@@ -99,23 +93,25 @@ export const OmranHeader = () => {
             >
               <CalendarDays />
             </ShowInAnimation>
-            <p>
-              <TextEffectAnimation
-                text="11 إلى 13 أكتوبر 2024"
-                isInView={isInView}
-                delay={3}
-              />
-            </p>
+            <ShowInAnimation
+              delay={2.2}
+              x={40}
+              y={0}
+              duration={0.3}
+              isInView={isInView}
+            >
+              <p>11 ألى 13 أكتوبر 2024</p>
+            </ShowInAnimation>
           </div>
         </div>
         <div className="flex items-center justify-center gap-2 sm:gap-4 rtl:space-x-reverse">
-          <ScaleAnimation delay={4} isInView={isInView}>
+          <ScaleAnimation delay={2.5} isInView={isInView}>
             <CountdownUnit value={minutes} label="دقائق" />
           </ScaleAnimation>
-          <ScaleAnimation delay={4} isInView={isInView}>
+          <ScaleAnimation delay={2.5} isInView={isInView}>
             <CountdownUnit value={hours} label="ساعات" />
           </ScaleAnimation>
-          <ScaleAnimation delay={4} isInView={isInView}>
+          <ScaleAnimation delay={2.5} isInView={isInView}>
             <CountdownUnit value={days} label="أيام" />
           </ScaleAnimation>
         </div>

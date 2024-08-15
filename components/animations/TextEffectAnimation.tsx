@@ -15,7 +15,7 @@ const TextEffectAnimation = ({
 }) => {
   const textEffect = text.split("");
   return (
-    <span>
+    <>
       {textEffect.map((el, i) => (
         <motion.span
           initial={{ opacity: 0 }}
@@ -32,7 +32,7 @@ const TextEffectAnimation = ({
           {el}
         </motion.span>
       ))}
-    </span>
+    </>
   );
 };
 
