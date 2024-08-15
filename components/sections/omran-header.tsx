@@ -12,6 +12,7 @@ import ScaleAnimation from "../animations/ScaleAnimation";
 import { useRef } from "react";
 import { WordsPullUp } from "../animations/words-pull-up";
 import { StaggeredFade } from "../animations/staggered-fade";
+import { TypingEffect } from "../animations/typing-effect";
 
 export const OmranHeader = () => {
   const { days, hours, minutes, seconds } = useCountdown(
@@ -39,10 +40,28 @@ export const OmranHeader = () => {
               text="مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر"
             />
           </p>
-          <h1 className="max-w-72 md:max-w-[41.625rem]">
-            <WordsPullUp text="مؤتمر عمران السنوي" className="text-[2.5rem] md:text-[4rem] md:leading-[4.25rem] font-bold" />
+          <h1 className="max-w-72 md:max-w-[41.625rem] text-[2.5rem] md:text-[4rem] md:leading-[4.25rem] font-bold">
+            {/* <TextEffectAnimation
+              text="مؤتمر عمران السنوي"
+              delay={0.75}
+              duration={0.1}
+              isInView={isInView}
+            /> */}
+            <TypingEffect
+              delay={0.75}
+              duration={0.1}
+              isInView={isInView}
+            >
+              مؤتمر عمران السنوي
+            </TypingEffect>
             <br />
-            <StaggeredFade text="2024" className="text-[2.5rem] md:text-[4rem] md:leading-[4.25rem] font-bold" />
+            <TextEffectAnimation
+              reverse={true}
+              text="2024"
+              delay={1.6}
+              duration={0.15}
+              isInView={isInView}
+            />
           </h1>
           <ShowInAnimation delay={2} isInView={isInView}>
             <Button className="bg-white text-[#011318] text-base hover:bg-[#E6EAEB] rounded-full border border-solid border-[#E6EAEB] md:min-w-[8.5rem] py-1.5 md:py-0 md:h-12 px-[1.125rem] md:px-6 font-medium">
