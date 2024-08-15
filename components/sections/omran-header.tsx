@@ -12,7 +12,6 @@ import ScaleAnimation from "../animations/ScaleAnimation";
 import { useRef } from "react";
 import { WordsPullUp } from "../animations/words-pull-up";
 import { StaggeredFade } from "../animations/staggered-fade";
-import { TypingEffect } from "../animations/typing-effect";
 
 export const OmranHeader = () => {
   const { days, hours, minutes, seconds } = useCountdown(
@@ -35,25 +34,21 @@ export const OmranHeader = () => {
       <div className="relative z-10 text-white text-center flex flex-col gap-[5.25rem]">
         <div className="flex flex-col gap-6 items-center">
           <p className="font-medium md:text-2xl leading-9 opacity-80">
-            <TextEffectAnimation
+            {/* <TextEffectAnimation
               isInView={isInView}
+              text="مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر"
+            /> */}
+            <StaggeredFade
               text="مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر"
             />
           </p>
           <h1 className="max-w-72 md:max-w-[41.625rem] text-[2.5rem] md:text-[4rem] md:leading-[4.25rem] font-bold">
-            {/* <TextEffectAnimation
+            <TextEffectAnimation
               text="مؤتمر عمران السنوي"
               delay={0.75}
               duration={0.1}
               isInView={isInView}
-            /> */}
-            <TypingEffect
-              delay={0.75}
-              duration={0.1}
-              isInView={isInView}
-            >
-              مؤتمر عمران السنوي
-            </TypingEffect>
+            />
             <br />
             <TextEffectAnimation
               reverse={true}
