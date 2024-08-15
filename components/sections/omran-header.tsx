@@ -12,6 +12,7 @@ import ScaleAnimation from "../animations/ScaleAnimation";
 import { useRef } from "react";
 import { WordsPullUp } from "../animations/words-pull-up";
 import { StaggeredFade } from "../animations/staggered-fade";
+import { TextFade } from "../animations/text-fade";
 
 export const OmranHeader = () => {
   const { days, hours, minutes, seconds } = useCountdown(
@@ -33,31 +34,24 @@ export const OmranHeader = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50" />
       <div className="relative z-10 text-white text-center flex flex-col gap-[5.25rem]">
         <div className="flex flex-col gap-6 items-center">
-          <p className="font-medium md:text-2xl leading-9 opacity-80">
-            {/* <TextEffectAnimation
-              isInView={isInView}
-              text="مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر"
-            /> */}
-            <StaggeredFade
-              text="مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر"
-            />
-          </p>
-          <h1 className="max-w-72 md:max-w-[41.625rem] text-[2.5rem] md:text-[4rem] md:leading-[4.25rem] font-bold">
-            <TextEffectAnimation
-              text="مؤتمر عمران السنوي"
-              delay={0.75}
-              duration={0.1}
-              isInView={isInView}
-            />
-            <br />
-            <TextEffectAnimation
-              reverse={true}
-              text="2024"
-              delay={1.6}
-              duration={0.15}
-              isInView={isInView}
-            />
-          </h1>
+          <TextFade
+            direction="up"
+          >
+            <p className="font-medium md:text-2xl leading-9 opacity-80">
+              مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر
+            </p>
+            <h1 className="max-w-72 md:max-w-[41.625rem] text-[2.5rem] md:text-[4rem] md:leading-[4.25rem] font-bold">
+              مؤتمر عمران السنوي
+              <br />
+              <TextEffectAnimation
+                reverse={true}
+                text="2024"
+                delay={1.6}
+                duration={0.15}
+                isInView={isInView}
+              />
+            </h1>
+          </TextFade>
           <ShowInAnimation delay={2} isInView={isInView}>
             <Button className="bg-white text-[#011318] text-base hover:bg-[#E6EAEB] rounded-full border border-solid border-[#E6EAEB] md:min-w-[8.5rem] py-1.5 md:py-0 md:h-12 px-[1.125rem] md:px-6 font-medium">
               سجل الآن
