@@ -10,8 +10,6 @@ import TextEffectAnimation from "../animations/TextEffectAnimation";
 import ShowInAnimation from "../animations/ShowInAnimation";
 import ScaleAnimation from "../animations/ScaleAnimation";
 import { useRef } from "react";
-import { WordsPullUp } from "../animations/words-pull-up";
-import { StaggeredFade } from "../animations/staggered-fade";
 import { TextFade } from "../animations/text-fade";
 
 export const OmranHeader = () => {
@@ -112,7 +110,7 @@ export const OmranHeader = () => {
             <CountdownUnit value={hours} label="ساعات" />
           </ScaleAnimation>
           <ScaleAnimation delay={2.5} isInView={isInView}>
-            <CountdownUnit value={days} label="أيام" />
+            <CountdownUnit value={days} label="يوم" />
           </ScaleAnimation>
         </div>
       </div>

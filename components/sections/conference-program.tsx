@@ -6,11 +6,11 @@ const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hide
 
   const pointerClasses = isFirstInAccordion
     ? eventNumber === "02"
-      ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[1.5rem] -left-[4.8125rem] sm:-left-[4.875rem] lg:-right-[1.75rem]"
+      ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[1.5rem] -right-[1.68rem]"
       : eventNumber === "03"
-        ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[1.5rem] -left-[4.8125rem] sm:-left-[4.875rem] lg:-right-[1.75rem]"
-        : "-top-[10rem] sm:top-3 -left-[4.8125rem] lg:-right-3"
-    : "-top-[6px] -left-2 lg:-right-3";
+        ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[1.5rem] -right-[1.68rem]"
+        : "-top-[10rem] sm:-top-[1.4rem] -right-[1.68rem]"
+    : "-top-[6px] -right-[1.68rem]";
 
   const getBgColor = () => {
     switch (type) {
@@ -58,22 +58,18 @@ const TimelineEvent = ({ number, title, date, items }) => {
       <Separator orientation='vertical' className='bg-[#AD9E68] w-[0.125rem] absolute lg:static inset-y-0 left-4 sm:left-0 lg:h-auto' />
       <div className="lg:w-1/2 flex-1 ms-[0.15rem]">
         <div className={`${+number === 2 ? 'pb-32' : +number === 3 ? 'pb-0' : 'pb-16'} flex flex-col`}>
-          {items.length === 1 && items[0].isAccordion ? (
-            <Accordion type="single" collapsible className="w-full lg:ms-4">
-              <AccordionItem value="item-1" className='bg-[#AD9E68]/20 ml-[1.375rem] rounded-2xl'>
-                <AccordionTrigger className="text-[#252C32] text-[1.375rem] leading-[2rem] text-right mb-4 text-balance font-bold hover:no-underline">
-                  <TimelineItem {...items[0]} isFirstInAccordion={true} eventNumber={number} />
-                </AccordionTrigger>
-                <AccordionContent>
-                  {items[0].subItems.map((subItem, index) => (
-                    <TimelineItem key={index} {...subItem} eventNumber={number} hideCircle />
-                  ))}
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          ) : (
-            items.map((item, index) => <TimelineItem key={index} {...item} eventNumber={number} />)
-          )}
+          <Accordion type="single" defaultValue="item-01" collapsible className="w-full lg:ms-4">
+            <AccordionItem value={`item-${number}`} className='bg-[#AD9E68]/20 ml-[1.375rem] rounded-2xl'>
+              <AccordionTrigger className="text-[#252C32] text-[1.375rem] leading-[2rem] text-right mb-4 text-balance font-bold hover:no-underline">
+                <TimelineItem {...items[0]} isFirstInAccordion={true} eventNumber={number} />
+              </AccordionTrigger>
+              <AccordionContent>
+                {items[0].subItems.map((subItem, index) => (
+                  <TimelineItem key={index} {...subItem} eventNumber={number} hideCircle />
+                ))}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </div>
@@ -85,18 +81,23 @@ export const ConferenceProgram = () => {
     {
       number: "01",
       title: "مهارات معاصرة في استدامة المشاريع",
-      date: "11 أغسطس 2024",
+      date: "11 أكتوبر 2024",
       items: [
-        { title: "قواعد في إدارة مشاريع مستدامة", presenter: "د. طارق السويدان", type: "دورة تدريبية" },
-        { title: "قوانين ومهارات في المؤسسية والقيادة بفعالية", presenter: "د. أكرم العدلوني", type: "محاضرة تدريبية" },
-        { title: "مهارات الريادة في السوق", presenter: "د. هيثم بابكر", type: "ورشة تدريبية" },
-        { title: "مهارات الاستدامة وقياس الأثر الاجتماعي في القرن 21", presenter: "د. سامي العدواني", type: "ورشة تدريبية" },
+        {
+          title: "قواعد في إدارة مشاريع مستدامة", presenter: "د. طارق السويدان", type: "دورة تدريبية",
+          isAccordion: true,
+          subItems: [
+            { title: "قوانين ومهارات في المؤسسية والقيادة بفعالية", presenter: "د. أكرم العدلوني", type: "محاضرة تدريبية" },
+            { title: "مهارات الريادة في السوق", presenter: "د. هيثم بابكر", type: "ورشة تدريبية" },
+            { title: "مهارات الاستدامة وقياس الأثر الاجتماعي في القرن 21", presenter: "د. سامي العدواني", type: "ورشة تدريبية" },
+          ]
+        },
       ]
     },
     {
       number: "02",
       title: "ركائز وأخلاقيات ومفاهيم متقدمة",
-      date: "12 أغسطس 2024",
+      date: "12 أكتوبر 2024",
       items: [
         {
           title: "الشروط الخمسة للمشاريع النهضوية",
@@ -113,7 +114,7 @@ export const ConferenceProgram = () => {
     {
       number: "03",
       title: "قوة الإمكان الشبابي",
-      date: "13 أغسطس 2024",
+      date: "13 أكتوبر 2024",
       items: [
         {
           title: "الإمكان الشبابي في بيئة الأعمال",
