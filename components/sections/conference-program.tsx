@@ -57,7 +57,7 @@ const TimelineEvent = ({ number, title, date, items }) => {
       </div>
       <Separator orientation='vertical' className='bg-[#AD9E68] w-[0.125rem] absolute lg:static inset-y-0 left-4 sm:left-0 lg:h-auto' />
       <div className="lg:w-1/2 flex-1 ms-[0.15rem]">
-        <div className={`${+number === 2 ? 'pb-32' : +number === 3 ? 'pb-0' : 'pb-16'} flex flex-col`}>
+        <div className={`${+number === 3 ? 'pb-0' : 'pb-32'} flex flex-col`}>
           <Accordion type="single" defaultValue="item-01" collapsible className="w-full lg:ms-4">
             <AccordionItem value={`item-${number}`} className='bg-[#AD9E68]/20 ml-[1.375rem] rounded-2xl'>
               <AccordionTrigger className="text-[#252C32] text-[1.375rem] leading-[2rem] text-right mb-4 text-balance font-bold hover:no-underline">
