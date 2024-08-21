@@ -2,8 +2,8 @@ import React from "react";
 import { Check, Minus } from "lucide-react";
 
 const plans = [
-    { name: "نحاسي", price: "$150" },
-    { name: "فضي", price: "$300" },
+  { name: "نحاسي", price: "$200" },
+  { name: "فضي", price: "$350" },
     { name: "ذهبي", price: "$500" },
   ];
 
@@ -76,8 +76,9 @@ export const PricingSection = () => {
       <h1 className="text-[#252C32] text-[2.5rem] leading-[3.25rem] font-bold text-center mb-4">
         باقات المشاركة
       </h1>
-      <p className="max-w-3xl mx-auto text-center text-[#252C32] text-lg font-normal mb-24">
-        اختر الباقة المناسبة لاحتياجاتك وأهدافك في المؤتمر
+      <p className="max-w-3xl mx-auto text-center text-[#252C32] text-lg font-normal mb-24 text-balance">
+        اختر الباقة المناسبة لاحتياجاتك واهدافك في المؤتمر
+        تتوفر خصومات خاصة بمجموعة الأفراد تصل إلى 20٪ لكل فرد (5 أفراد فما فوق)
       </p>
 
       <div className="hidden md:grid grid-cols-4 relative">

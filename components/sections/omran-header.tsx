@@ -36,7 +36,7 @@ export const OmranHeader = () => {
             direction="up"
           >
             <p className="font-medium md:text-2xl leading-9 opacity-80">
-              مشاريعٌ ناهضةٌ في واقعٍ مُتغيّر
+              مشاريع مستدامة في واقع متغيّر
             </p>
             <h1 className="max-w-72 md:max-w-[41.625rem] text-[2.5rem] md:text-[4rem] md:leading-[4.25rem] font-bold">
               مؤتمر عمران السنوي
@@ -98,7 +98,7 @@ export const OmranHeader = () => {
               duration={0.3}
               isInView={isInView}
             >
-              <p>11 ألى 13 أكتوبر 2024</p>
+              <p>أيام 11 إلى 13 أكتوبر 2024</p>
             </ShowInAnimation>
           </div>
         </div>

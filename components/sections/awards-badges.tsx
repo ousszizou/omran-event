@@ -47,30 +47,34 @@ export const AwardsBadges = () => {
 
   return (
     <section className="container mx-auto">
-      <h2 className="text-[#252C32] text-[1.75rem] leading-[2.5rem] font-bold">أوسمة التكريم لأفضل مشروع في</h2>
-
+      <h1 className="text-[#252C32] text-[2.5rem] text-center leading-[3.25rem] font-bold mb-4">
+        أوسمة التكريم لأفضل مشروع في
+      </h1>
+      <p className="max-w-3xl mx-auto text-center text-[#252C32] text-lg font-normal mb-48 text-balance">
+        نتطلع لتشجيع عدد من المشاريع التي تخدم الأثر المجتمعي المستدام، ونشعر بالفخر أن نستضيفكم في جناح أفضل مشروع متخصص بالأمة في:
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 mt-24" ref={gridRef}>
         <ParallaxColumn y={translateFirst}>
-          <AwardCard text="مجتمع المدينة" color="beige" />
-          <AwardCard text="الصحة والبيئة" color="white" />
-          <AwardCard text="التعليم" color="dark" />
-          <AwardCard text="خدمة الشأن العام" color="white" />
+          <AwardCard text="فلسطين وقضايا التحرر" color="beige" />
+          <AwardCard text="الفكر والتعليم والوعي" color="white" />
+          <AwardCard text="الصحة والبيئة والمناخ" color="dark" />
+          <AwardCard text="التنمية وخدمة الشأن العام" color="white" />
         </ParallaxColumn>
 
         <ParallaxColumn y={translateSecond}>
           <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy1Src} alt="Trophy 1" fill className="rounded-2xl object-cover" />
           </div>
-          <AwardCard text="الفكر الحضاري" color="beige" />
+          <AwardCard text="الدعوة والسلوك والأخلاق" color="beige" />
           <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy2Src} alt="Trophy 2" fill className="rounded-2xl object-cover" />
           </div>
         </ParallaxColumn>
 
         <ParallaxColumn y={translateThird}>
-          <AwardCard text="تكنولوجيا الآلة" color="light" />
-          <AwardCard text="الذكاء الاصطناعي" color="white" />
-          <AwardCard text="التربية وتنشئة الأجيال" color="dark" />
+          <AwardCard text="التربية وتنشئة الأجيال" color="light" />
+          <AwardCard text="التدريب والمهارة" color="white" />
+          <AwardCard text="الفنون والثقافة والاعلام" color="dark" />
           <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
             <Image src={trophy3Src} alt="Trophy 3" fill className="rounded-2xl object-cover" />
           </div>

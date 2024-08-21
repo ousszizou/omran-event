@@ -26,7 +26,7 @@ const SpeakerCard = ({ name, title, imageSrc, tags }) => (
       <div>
         <h3 className="text-lg font-bold text-[#011318] text-right mt-4">{name}</h3>
         <p className="text-sm font-normal text-[#585B5C] text-right">{title}</p>
-        <div className="flex justify-between gap-2 mt-4">
+        <div className="flex justify-start gap-2 mt-4">
           {tags.map((tag, index) => (
             <Badge key={index} variant="secondary" className="text-xs font-normal px-3 py-1 bg-[#E6EAEB] text-[#585B5C] rounded-full">
               {tag}
@@ -47,40 +47,52 @@ const SpeakerCard = ({ name, title, imageSrc, tags }) => (
 export const Speakers = () => {
   const speakers = [
     {
-      name: "الدكتور فلان الفلاني",
-      title: "من سلسلة كتاب المشاريع والأعمال إصدار يناير 2021",
+      name: "د. طارق السويدان",
+      title: "",
       imageSrc: SpeakerPicture,
-      tags: ["ريادة الأعمال", "تخطيط", "تجارة"]
+      tags: ["التخطيط", "المشاريع", "القيادة"]
     },
     {
-      name: "الدكتور فلان الفلاني",
-      title: "من سلسلة كتاب المشاريع والأعمال إصدار يناير 2021",
+      name: "د. عبد الرزاق مقري",
+      title: "",
       imageSrc: SpeakerPicture,
-      tags: ["ريادة الأعمال", "تخطيط", "تجارة"]
+      tags: ["المنظمات", "القيادة", "الاستراتيجية"]
     },
     {
-      name: "الدكتور فلان الفلاني",
-      title: "من سلسلة كتاب المشاريع والأعمال إصدار يناير 2021",
+      name: "د. مصطفى المومري",
+      title: "",
       imageSrc: SpeakerPicture,
-      tags: ["ريادة الأعمال", "تخطيط", "تجارة"]
+      tags: ["التخطيط", "القيادة", "المشاريع"]
     },
     {
-      name: "الدكتور فلان الفلاني",
-      title: "من سلسلة كتاب المشاريع والأعمال إصدار يناير 2021",
+      name: "م. إبراهيم هواري",
+      title: "",
       imageSrc: SpeakerPicture,
-      tags: ["ريادة الأعمال", "تخطيط", "تجارة"]
+      tags: ["المشاريع", "الإنتاجية", "فرق العمل"]
     },
     {
-      name: "الدكتور فلان الفلاني",
-      title: "من سلسلة كتاب المشاريع والأعمال إصدار يناير 2021",
+      name: "د. هيثم بابكر",
+      title: "",
       imageSrc: SpeakerPicture,
-      tags: ["ريادة الأعمال", "تخطيط", "تجارة"]
+      tags: ["المشاريع", "الأثر المجتمعي"]
     },
     {
-      name: "الدكتور فلان الفلاني",
-      title: "من سلسلة كتاب المشاريع والأعمال إصدار يناير 2021",
+      name: "د. أكرم العدلوني",
+      title: "",
       imageSrc: SpeakerPicture,
-      tags: ["ريادة الأعمال", "تخطيط", "تجارة"]
+      tags: ["القيادة", "الإدارة", "المنظمات"]
+    },
+    {
+      name: "د. رضا الحديثي",
+      title: "",
+      imageSrc: SpeakerPicture,
+      tags: ["المشاريع التربوية", "الإدارة"]
+    },
+    {
+      name: "أ. غزوان المصري",
+      title: "",
+      imageSrc: SpeakerPicture,
+      tags: ["التمويل", "الاستثمار", "قيادة الأعمال"]
     },
   ];
 
@@ -95,8 +107,7 @@ export const Speakers = () => {
         </div>
         <h2 className="text-[#252C32] text-[2.5rem] leading-[3.25rem] font-bold text-center">المتحدثون المتميزون</h2>
         <p className="mt-6 mb-24 max-w-3xl mx-auto text-center text-[#252C32] text-lg font-normal">
-          لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
-          أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا .
+          يوفر لكم المؤتمر أفضل المتحدثين والمدربين لدعم وتعزيز مهارات رواد الأعمال وأصحاب الخبرة القوية في الأثر المجتمعي المستدام.
         </p>
         <Carousel className="w-full max-w-6xl mx-auto" opts={{
           direction: "rtl",
@@ -104,7 +115,7 @@ export const Speakers = () => {
         }}>
           <CarouselContent>
             {speakers.map((speaker, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/4 pl-10">
+              <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/3 pl-10">
                 <div className='rounded-3xl overflow-hidden border-none bg-white p-5 min-w-[269px]'>
                   <SpeakerCard {...speaker} />
                 </div>
