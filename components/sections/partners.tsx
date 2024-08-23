@@ -2,30 +2,26 @@
 
 import React, { useRef } from "react";
 import Image, { type StaticImageData } from "next/image";
-import LaunchGoodPartner from "../../assets/partners/launch-good.png";
-import RyadiPartner from "../../assets/partners/ryadi.png";
-import MiamiPartner from "../../assets/partners/miami-business-solutions.png";
-import TanmawiPartner from "../../assets/partners/tanmawi.png";
-import ProdevPartner from "../../assets/partners/prodev.png";
-import FennecPartner from "../../assets/partners/fennec-technologies.png";
-import LastPartner from "../../assets/partners/last-partner.png";
-import { motion, useInView } from "framer-motion";
+import partner1Src from "../../assets/partners/partner-1.png";
+import partner2Src from "../../assets/partners/partner-2.png";
+import partner3Src from "../../assets/partners/partner-3.png";
+import partner4Src from "../../assets/partners/partner-4.png";
+import { useInView } from "framer-motion";
 import ShowInAnimation from "../animations/ShowInAnimation";
 import { Button } from "../ui/button";
 
 const PartnerLogo = ({ src, alt }: { src: StaticImageData; alt: string }) => (
-  <Image src={src} alt={alt} width={148.61} height={170.42} />
+  <div className="w-full h-full flex items-center justify-center p-4">
+    <Image src={src} alt={alt} layout="responsive" width={300} height={300} objectFit="contain" />
+  </div>
 );
 
 export const Partners = () => {
   const partners = [
-    { src: LaunchGoodPartner, alt: "Launch Good Partner" },
-    { src: RyadiPartner, alt: "Ryadi Partner" },
-    { src: MiamiPartner, alt: "Miami Business Solutions Partner" },
-    { src: TanmawiPartner, alt: "Tanmawi Partner" },
-    { src: ProdevPartner, alt: "Prodev Partner" },
-    { src: FennecPartner, alt: "Fennec Technologies Partner" },
-    { src: LastPartner, alt: "Last Partner" },
+    { src: partner1Src, alt: "thuraya enterprise" },
+    { src: partner2Src, alt: "bawsala" },
+    { src: partner3Src, alt: "barbaros events" },
+    { src: partner4Src, alt: "gulf innovation" },
   ];
 
   const container = useRef<HTMLDivElement>(null);
@@ -33,7 +29,7 @@ export const Partners = () => {
 
   return (
     <section
-      className="w-full py-24 mt-24 md:mt-[12.75rem] px-4 bg-[#EDE6CC]"
+      className="w-full py-12 sm:py-16 md:py-24 mt-12 sm:mt-16 md:mt-[12.75rem] px-4 bg-[#EDE6CC]"
       ref={container}
     >
       <div className="container mx-auto">
@@ -44,41 +40,21 @@ export const Partners = () => {
           duration={0.6}
           isInView={isInView}
         >
-          <h2 className="font-bold text-center text-black text-[2.5rem] leading-[3.25rem]">
+          <h2 className="font-bold text-center text-black text-2xl sm:text-3xl md:text-[2.5rem] leading-tight md:leading-[3.25rem]">
             فخورون بشركاء الإنجاز
           </h2>
         </ShowInAnimation>
 
-        <ShowInAnimation
-          delay={0.8}
-          x={0}
-          y={60}
-          duration={0.6}
-          isInView={isInView}
-        >
-          <div
-            dir="ltr"
-            className="w-full inline-flex gap-4 flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-48px),transparent_100%)] sm:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] mt-24"
-          >
-            <ul className="flex items-stretch justify-center gap-4 animate-infinite-scroll">
-              {partners.map((partner, index) => (
-                <li key={index} className="min-w-[150px]">
-                  <PartnerLogo key={index} {...partner} />
-                </li>
-              ))}
-            </ul>
-            <ul className="flex items-stretch justify-center gap-4 animate-infinite-scroll">
-              {partners.map((partner, index) => (
-                <li key={index} className="min-w-[150px]">
-                  <PartnerLogo key={index} {...partner} />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </ShowInAnimation>
+        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-8 sm:mt-12 md:mt-16">
+          {partners.map((partner, index) => (
+            <li key={index} className="bg-white rounded flex items-center justify-center aspect-square">
+              <PartnerLogo {...partner} />
+            </li>
+          ))}
+        </ul>
 
-        <div className="flex justify-center mt-16">
-          <Button className="text-[#AD9E68] bg-white rounded-full text-base px-[1.125rem] py-1.5 md:h-12 md:px-8 font-medium w-fit hover:text-white">
+        <div className="flex justify-center mt-8 sm:mt-12 md:mt-16">
+          <Button className="text-[#AD9E68] bg-white rounded-full text-sm sm:text-base px-4 sm:px-6 md:px-8 py-1.5 md:py-2 font-medium w-fit hover:text-white">
             التحق برعاة المُؤتمر
           </Button>
         </div>

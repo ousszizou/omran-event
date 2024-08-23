@@ -24,7 +24,7 @@ export default function Home() {
         <PricingSection />
         <OmranAnnualAward />
         <AwardsBadges />
-        <div className="flex flex-col items-center gap-8 relative mt-16 md:mt-[32.5rem]">
+        <div className="flex flex-col items-center gap-8 relative mt-16">
           <Image src={omranRewardLogo} alt="Omran Reward Logo" width={172} height={412} />
           <div className='flex flex-col items-center gap-[2.5rem]'>
             <span className="font-bold text-[#AD9E68] text-3xl">قيمة الجائزة 10 آلاف دولار</span>

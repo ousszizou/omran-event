@@ -57,27 +57,18 @@ export const AwardsBadges = () => {
         <ParallaxColumn y={translateFirst}>
           <AwardCard text="فلسطين وقضايا التحرر" color="beige" />
           <AwardCard text="الفكر والتعليم والوعي" color="white" />
-          <AwardCard text="الصحة والبيئة والمناخ" color="dark" />
           <AwardCard text="التنمية وخدمة الشأن العام" color="white" />
         </ParallaxColumn>
 
         <ParallaxColumn y={translateSecond}>
-          <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
-            <Image src={trophy1Src} alt="Trophy 1" fill className="rounded-2xl object-cover" />
-          </div>
           <AwardCard text="الدعوة والسلوك والأخلاق" color="beige" />
-          <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
-            <Image src={trophy2Src} alt="Trophy 2" fill className="rounded-2xl object-cover" />
-          </div>
+          <AwardCard text="الصحة والبيئة والمناخ" color="dark" />
         </ParallaxColumn>
 
         <ParallaxColumn y={translateThird}>
           <AwardCard text="التربية وتنشئة الأجيال" color="light" />
           <AwardCard text="التدريب والمهارة" color="white" />
           <AwardCard text="الفنون والثقافة والاعلام" color="dark" />
-          <div className="w-full h-40 sm:h-60 md:h-2/4 relative">
-            <Image src={trophy3Src} alt="Trophy 3" fill className="rounded-2xl object-cover" />
-          </div>
         </ParallaxColumn>
       </div>
     </section>
