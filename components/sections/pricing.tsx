@@ -1,5 +1,6 @@
 import React from "react";
 import { Check, Minus } from "lucide-react";
+import { IframeModal } from "../IFrameModal";
 
 const plans = [
   { name: "نحاسي", price: "$200" },
@@ -100,12 +101,15 @@ export const PricingSection = () => {
                 /للمؤتمر
               </span>
             </div>
-            <button
-              type="button"
-              className={`w-full py-3 px-6 rounded-full ${index === 2 ? "bg-[#AD9E68] text-white" : "bg-white text-[#AD9E68] border border-[#AD9E68] hover:bg-[#AD9E68] hover:text-white"}`}
-            >
-              اشترك الآن
-            </button>
+            <IframeModal formUrl="https://docs.google.com/forms/d/e/1FAIpQLSdpGGnQUX15Wbl4n58FDL2BpTsrp7a6gie475H-rVqv-p5xFQ/viewform?embedded=true">
+              <button
+                type="button"
+                className={`w-full py-3 px-6 rounded-full ${index === 2 ? "bg-[#AD9E68] text-white" : "bg-white text-[#AD9E68] border border-[#AD9E68] hover:bg-[#AD9E68] hover:text-white"}`}
+              >
+                اشترك الآن
+              </button>
+            </IframeModal>
+
           </div>
         ))}
 

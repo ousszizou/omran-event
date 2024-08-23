@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import OmranConference from "../../assets/omran-conference.svg";
 import ShowInAnimation from "../animations/ShowInAnimation";
 import { useInView } from "framer-motion";
+import { IframeModal } from "../IFrameModal";
 
 export const CallToAction = () => {
   const container = useRef<HTMLDivElement>(null);
@@ -51,9 +52,12 @@ export const CallToAction = () => {
               duration={0.6}
               isInView={isInView}
             >
-              <Button className="bg-[#AD9E68] text-white rounded-full text-base h-12 px-6 font-medium">
-                سجل الآن
-              </Button>
+              <IframeModal formUrl="https://docs.google.com/forms/d/e/1FAIpQLSdpGGnQUX15Wbl4n58FDL2BpTsrp7a6gie475H-rVqv-p5xFQ/viewform?embedded=true">
+                <Button className="bg-[#AD9E68] text-white rounded-full text-base h-12 px-6 font-medium">
+                  سجل الآن
+                </Button>
+              </IframeModal>
+
             </ShowInAnimation>
           </div>
           <div className="flex-shrink-0">
