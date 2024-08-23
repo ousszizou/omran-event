@@ -9,7 +9,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { FaYoutube, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa';
-import SpeakerPicture from "../../assets/speaker-picture.jpg";
+import akramPicture from "../../assets/speakers/akram.png";
+import ghazwanPicture from "../../assets/speakers/ghazwan.png";
+import haythemPicture from "../../assets/speakers/haythem.png";
+import ibrahimPicture from "../../assets/speakers/ibrahim.png";
+import megriPicture from "../../assets/speakers/megri.png";
+import mustafaPicture from "../../assets/speakers/mustafa.png";
+import ridhaPicture from "../../assets/speakers/ridha.png";
+import tareqPicture from "../../assets/speakers/tareq.png";
 import vector1Src from "../../assets/speakers-vector-1.svg";
 import vector2Src from "../../assets/speakers-vector-2.svg";
 
@@ -33,12 +40,6 @@ const SpeakerCard = ({ name, title, imageSrc, tags }) => (
             </Badge>
           ))}
         </div>
-        <div className="flex justify-center space-x-4 space-x-reverse mt-4">
-          <FaFacebookF size={20} className="text-[#011318] hover:text-blue-600  cursor-pointer" />
-          <FaInstagram size={20} className="text-[#011318] hover:text-pink-600 cursor-pointer" />
-          <FaTwitter size={20} className="text-[#011318] hover:text-blue-400 cursor-pointer" />
-          <FaYoutube size={20} className="text-[#011318] hover:text-red-600 cursor-pointer" />
-        </div>
       </div>
     </div>
   </div>
@@ -49,49 +50,49 @@ export const Speakers = () => {
     {
       name: "د. طارق السويدان",
       title: "",
-      imageSrc: SpeakerPicture,
+      imageSrc: tareqPicture,
       tags: ["التخطيط", "المشاريع", "القيادة"]
     },
     {
       name: "د. عبد الرزاق مقري",
       title: "",
-      imageSrc: SpeakerPicture,
+      imageSrc: megriPicture,
       tags: ["المنظمات", "القيادة", "الاستراتيجية"]
-    },
-    {
-      name: "د. مصطفى المومري",
-      title: "",
-      imageSrc: SpeakerPicture,
-      tags: ["التخطيط", "القيادة", "المشاريع"]
     },
     {
       name: "م. إبراهيم هواري",
       title: "",
-      imageSrc: SpeakerPicture,
+      imageSrc: ibrahimPicture,
       tags: ["المشاريع", "الإنتاجية", "فرق العمل"]
+    },
+    {
+      name: "د. مصطفى المومري",
+      title: "",
+      imageSrc: mustafaPicture,
+      tags: ["التخطيط", "القيادة", "المشاريع"]
     },
     {
       name: "د. هيثم بابكر",
       title: "",
-      imageSrc: SpeakerPicture,
+      imageSrc: haythemPicture,
       tags: ["المشاريع", "الأثر المجتمعي"]
     },
     {
       name: "د. أكرم العدلوني",
       title: "",
-      imageSrc: SpeakerPicture,
+      imageSrc: akramPicture,
       tags: ["القيادة", "الإدارة", "المنظمات"]
     },
     {
       name: "د. رضا الحديثي",
       title: "",
-      imageSrc: SpeakerPicture,
+      imageSrc: ridhaPicture,
       tags: ["المشاريع التربوية", "الإدارة"]
     },
     {
       name: "أ. غزوان المصري",
       title: "",
-      imageSrc: SpeakerPicture,
+      imageSrc: ghazwanPicture,
       tags: ["التمويل", "الاستثمار", "قيادة الأعمال"]
     },
   ];

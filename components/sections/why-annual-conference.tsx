@@ -4,10 +4,16 @@ import Image from "next/image";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import ShowInAnimation from "../animations/ShowInAnimation";
-import feature1Src from "../../assets/features/feature-1.jpg";
-import feature2Src from "../../assets/features/feature-2.jpg";
-import feature3Src from "../../assets/features/feature-3.jpg";
-import feature4Src from "../../assets/features/feature-4.jpg";
+import istanbulSrc from "../../assets/why-annual-conference/istanbul.jpg";
+import competitionSrc from "../../assets/why-annual-conference/competition.jpeg";
+import guidancesSrc from "../../assets/why-annual-conference/guidances.jpg";
+import hotelSrc from "../../assets/why-annual-conference/hotel.jpg";
+import meetingsSrc from "../../assets/why-annual-conference/meetings.jpg";
+import networkingSrc from "../../assets/why-annual-conference/networking.jpg";
+import projectsSrc from "../../assets/why-annual-conference/projects.jpg";
+import servicesSrc from "../../assets/why-annual-conference/services.jpg";
+import workshopsSrc from "../../assets/why-annual-conference/workshops.jpg";
+import conferencesSrc from "../../assets/why-annual-conference/conferences.jpg";
 import omranLogoSrc from "../../assets/omran-letter-logo.svg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 
@@ -16,68 +22,68 @@ const features = [
     title: "الدورات والورش التدريبية",
     description:
       "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
-    imageSrc: feature1Src,
+    imageSrc: workshopsSrc,
   },
   {
     title: "المحاضرات والجلسات الحوارية",
     description:
       "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
-    imageSrc: feature2Src,
+    imageSrc: conferencesSrc,
   },
   {
     title: "بناء العلاقات والتشبيك",
     description:
       "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
-    imageSrc: feature3Src,
-  },
-  {
-    title: "عروض المشاريع",
-    description:
-      "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
-    imageSrc: feature4Src,
-  },
-  {
-    title: "اللقاء بالمستثمرين والمتبرعين",
-    description:
-      "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
-    imageSrc: feature1Src,
-  },
-  {
-    title: "جلسات الاستشارة والمرافقة",
-    description:
-      "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
-    imageSrc: feature2Src,
+    imageSrc: networkingSrc,
   },
   {
     title: "التنافس حول الجوائز",
     description:
       "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
-    imageSrc: feature3Src,
+    imageSrc: competitionSrc,
+  },
+  {
+    title: "عروض المشاريع",
+    description:
+      "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
+    imageSrc: projectsSrc,
+  },
+  {
+    title: "اللقاء بالمستثمرين والمتبرعين",
+    description:
+      "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
+    imageSrc: meetingsSrc,
+  },
+  {
+    title: "جلسات الاستشارة والمرافقة",
+    description:
+      "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
+    imageSrc: guidancesSrc,
   },
   {
     title: "مدينة إسطنبول الساحرة",
     description:
       "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
-    imageSrc: feature3Src,
+    imageSrc: istanbulSrc,
   },
   {
     title: "خدمات فندقية مميزة",
     description:
       "نقدم ورشات عمل تهدف إلى تطوير رواد الأعمال وتزويدهم بالمهارات والمعرفة اللازمة لنجاح مشاريعهم",
-    imageSrc: feature3Src,
+    imageSrc: servicesSrc,
   },
 ];
 
 type Feature = (typeof features)[number];
 
 const ConferenceFeature = ({ title, description, imageSrc }: Feature) => (
-  <div>
+  <>
     <Image
       src={imageSrc}
       alt={title}
       width={300}
       height={200}
-      className="w-full object-cover rounded-[16px]"
+      className="w-full object-cover rounded-[16px] min-h-[200px]"
     />
     <div className="p-5 lg:p-[1.375rem] relative bottom-8 bg-white rounded-2xl">
       <h3 className="text-[#252C32] text-base font-bold mb-4">{title}</h3>
@@ -85,7 +91,7 @@ const ConferenceFeature = ({ title, description, imageSrc }: Feature) => (
         {description}
       </p>
     </div>
-  </div>
+  </>
 );
 
 export const WhyAnnualConference = () => {
@@ -123,7 +129,7 @@ export const WhyAnnualConference = () => {
               duration={0.6}
               isInView={isInView}
             >
-              <p className="text-white">
+              <p className="text-white max-w-3xl text-balance">
                 يجتمع "العمرانيون" في حدث سنوي مميّز لعلاج إشكالية في مشاريع نهضة الأمة، يشارك بالمؤتمر شباب جادّ من مختلف الأجناس والثقافات واللغات والألوان والأعراق بهدف وحيد وواحد، وهو نهضة أمة الإسلام.
               </p>
             </ShowInAnimation>
