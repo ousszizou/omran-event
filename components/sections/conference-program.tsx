@@ -26,7 +26,7 @@ const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hide
   return (
     <div className="relative mb-12 flex-grow">
       <div className={`absolute w-4 h-4 bg-[#AD9E68] rounded-full ${hideCircle ? "hidden" : pointerClasses}`} />
-      <div className={`${eventNumber !== "01" ? 'ps-4 lg:ps-8' : 'lg:ps-16'}`}>
+      <div className='ps-4 lg:ps-8'>
         <h4 className="md:ml-2 lg:ml-0 text-[#252C32] md:text-[1.375rem] md:leading-[2rem] text-right mb-7 lg:mb-8 text-balance font-bold">{title}</h4>
         <div className="flex gap-4 sm:gap-7 md:gap-8 flex-col sm:flex-row items-start lg:items-center">
           <div className={`text-white rounded-full px-5 py-2 ${getBgColor()} text-xs`}>{type}</div>
