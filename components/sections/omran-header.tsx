@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import backgroundSrc from "../../assets/header-bg.png";
+import backgroundSrc from "../../assets/header-bg.jpg";
 import { Button } from "../ui/button";
 import { useCountdown } from "@/hooks/use-countdown";
 import { CalendarDays, MapPin } from "lucide-react";
