@@ -14,8 +14,6 @@ export const OmranAnnualAward = () => {
           <ul className="list-disc list-inside space-y-4 text-sm font-normal mt-8">
             <li>الاشتراك في المؤتمر</li>
             <li>رفع بيانات المشروع عبر منصة عمران</li>
-            <li>يجب أن يتوفر فيها على الأقل:</li>
-            <li>المشاركة في المؤتمر</li>
             <li>فريق عمل (عضوين على الأقل فما فوق)</li>
             <li>عمر المشروع أقل من ثلاث سنوات</li>
             <li>المشروع مسجل قانونيًا أو ضمن المنظمة الأم</li>

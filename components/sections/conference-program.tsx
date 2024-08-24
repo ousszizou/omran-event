@@ -30,7 +30,7 @@ const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hide
         <h4 className="md:ml-2 lg:ml-0 text-[#252C32] md:text-[1.375rem] md:leading-[2rem] text-right mb-7 lg:mb-8 text-balance font-bold">{title}</h4>
         <div className="flex gap-4 sm:gap-7 md:gap-8 flex-col sm:flex-row items-start lg:items-center">
           <div className={`text-white rounded-full px-5 py-2 ${getBgColor()} text-xs`}>{type}</div>
-          <p className="text-xs md:text-lg text-[#AD9E68] text-right font-medium">{presenter}</p>
+          {/* <p className="text-xs md:text-lg text-[#AD9E68] text-right font-medium">{presenter}</p> */}
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@ export const ConferenceProgram = () => {
       date: "11 أكتوبر 2024",
       items: [
         {
-          title: "قواعد في إدارة مشاريع مستدامة", presenter: "د. طارق السويدان", type: "دورة تدريبية",
+          title: "قواعد في استدامة المشاريع", presenter: "د. طارق السويدان", type: "دورة تدريبية",
           isAccordion: true,
           subItems: [
             { title: "قوانين ومهارات في المؤسسية والقيادة بفعالية", presenter: "د. أكرم العدلوني", type: "محاضرة تدريبية" },

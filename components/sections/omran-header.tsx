@@ -51,12 +51,15 @@ export const OmranHeader = () => {
               />
             </h1>
           </TextFade>
-          <ShowInAnimation delay={1.5} isInView={isInView}>
+          <ShowInAnimation delay={1.5} isInView={isInView} className="flex flex-col sm:flex-row gap-4">
             <IframeModal formUrl="https://docs.google.com/forms/d/e/1FAIpQLSdpGGnQUX15Wbl4n58FDL2BpTsrp7a6gie475H-rVqv-p5xFQ/viewform?embedded=true">
               <Button className="bg-white text-[#011318] text-base hover:bg-[#E6EAEB] rounded-full border border-solid border-[#E6EAEB] md:min-w-[8.5rem] py-1.5 md:py-0 md:h-12 px-[1.125rem] md:px-6 font-medium">
                 سجل الآن
               </Button>
             </IframeModal>
+            <Button className="bg-[#AD9E68] text-white rounded-full text-base px-[1.125rem] py-1.5 md:h-12 md:px-6 font-medium" asChild>
+              <a href="https://incubator.omran.org/projects/create" target="_blank" rel="noreferrer"> قدم مشروعك الآن</a>
+            </Button>
           </ShowInAnimation>
         </div>
         <div className="font-medium md:font-bold text-base text-start flex flex-col sm:flex-row md:items-start gap-6 md:gap-[5.25rem]">

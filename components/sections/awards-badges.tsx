@@ -53,23 +53,21 @@ export const AwardsBadges = () => {
       <p className="max-w-3xl mx-auto text-center text-[#252C32] text-lg font-normal mb-48 text-balance">
         نتطلع لتشجيع عدد من المشاريع التي تخدم الأثر المجتمعي المستدام، ونشعر بالفخر أن نستضيفكم في جناح أفضل مشروع متخصص بالأمة في:
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 mt-24" ref={gridRef}>
-        <ParallaxColumn y={translateFirst}>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="space-y-8">
           <AwardCard text="فلسطين وقضايا التحرر" color="beige" />
           <AwardCard text="الفكر والتعليم والوعي" color="white" />
           <AwardCard text="التنمية وخدمة الشأن العام" color="white" />
-        </ParallaxColumn>
-
-        <ParallaxColumn y={translateSecond}>
+        </div>
+        <div className="space-y-8">
           <AwardCard text="الدعوة والسلوك والأخلاق" color="beige" />
           <AwardCard text="الصحة والبيئة والمناخ" color="dark" />
-        </ParallaxColumn>
-
-        <ParallaxColumn y={translateThird}>
+        </div>
+        <div className="space-y-8">
           <AwardCard text="التربية وتنشئة الأجيال" color="light" />
           <AwardCard text="التدريب والمهارة" color="white" />
           <AwardCard text="الفنون والثقافة والاعلام" color="dark" />
-        </ParallaxColumn>
+        </div>
       </div>
     </section>
   );
