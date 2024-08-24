@@ -79,7 +79,7 @@ export const OmranHeader = () => {
             >
               <div className="flex flex-col items-start">
 
-                <p>فندق istanbul baya fair & suite</p>
+                <p>فندق Kaya Istanbul Fair & Convention Hotel</p>
                 <p>- مدينة اسطنبول، تركيا.</p>
               </div>
             </ShowInAnimation>
@@ -101,16 +101,16 @@ export const OmranHeader = () => {
               duration={0.3}
               isInView={isInView}
             >
-              <p>أيام 11 إلى 13 أكتوبر 2024</p>
+              <p>11 إلى 13 أكتوبر 2024</p>
             </ShowInAnimation>
           </div>
         </div>
         <div className="flex items-center justify-center gap-2 sm:gap-4 rtl:space-x-reverse">
           <ScaleAnimation delay={2.5} isInView={isInView}>
-            <CountdownUnit value={minutes} label="دقائق" />
+            <CountdownUnit value={minutes} label="دقيقة" />
           </ScaleAnimation>
           <ScaleAnimation delay={2.5} isInView={isInView}>
-            <CountdownUnit value={hours} label="ساعات" />
+            <CountdownUnit value={hours} label="ساعة" />
           </ScaleAnimation>
           <ScaleAnimation delay={2.5} isInView={isInView}>
             <CountdownUnit value={days} label="يوم" />
