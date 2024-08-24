@@ -9,6 +9,7 @@ import partner4Src from "../../assets/partners/partner-4.png";
 import { useInView } from "framer-motion";
 import ShowInAnimation from "../animations/ShowInAnimation";
 import { Button } from "../ui/button";
+import { IframeModal } from "../IFrameModal";
 
 const PartnerLogo = ({ src, alt }: { src: StaticImageData; alt: string }) => (
   <div className="w-full h-full flex items-center justify-center p-4">
@@ -54,9 +55,11 @@ export const Partners = () => {
         </ul>
 
         <div className="flex justify-center mt-8 sm:mt-12 md:mt-16">
-          <Button className="text-[#AD9E68] bg-white rounded-full text-sm sm:text-base px-4 sm:px-6 md:px-8 py-1.5 md:py-2 font-medium w-fit hover:text-white">
-            التحق برعاة المُؤتمر
-          </Button>
+          <IframeModal formUrl="https://docs.google.com/forms/d/e/1FAIpQLSe9NXCRpArgC2fQgX8cmCNl3dSeT0tH7ss9LkQ9KZ4YKKUYrA/viewform?embedded=true">
+            <Button className="text-[#AD9E68] bg-white rounded-full text-sm sm:text-base px-4 sm:px-6 md:px-8 py-1.5 md:py-2 font-medium w-fit hover:text-white">
+              التحق برعاة المُؤتمر
+            </Button>
+          </IframeModal>
         </div>
       </div>
     </section>

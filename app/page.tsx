@@ -29,8 +29,8 @@ export default function Home() {
           <div className='flex flex-col items-center gap-[2.5rem]'>
             <span className="font-bold text-[#AD9E68] text-3xl">قيمة الجائزة 10 آلاف دولار</span>
             <h3 className="text-[1.375rem] md:text-[1.75rem] md:leading-[2.5rem] font-bold text-[#252C32]">رشح مشروعك لجائزة عمران السنوية</h3>
-            <Button className="bg-[#AD9E68] text-white rounded-full text-base px-[1.125rem] py-1.5 md:h-12 md:px-6 font-medium">
-              قدم مشروعك الآن
+            <Button className="bg-[#AD9E68] text-white rounded-full text-base px-[1.125rem] py-1.5 md:h-12 md:px-6 font-medium" asChild>
+              <a href="https://incubator.omran.org/projects/create" target="_blank"> قدم مشروعك الآن</a>
             </Button>
           </div>
         </div>
