@@ -15,16 +15,28 @@ const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hide
   const getBgColor = () => {
     switch (type) {
       case 'محاضرة تدريبية':
-        return 'bg-[#AD9E68]';
+        return 'bg-[#6AAA72]';
+      case 'محاضرة تفاعلية':
+        return 'bg-[#6AAA72]';
+      case 'ندوة حوارية':
+        return 'bg-[#6AAA72]';
       case 'ورشة تدريبية':
-        return 'bg-[#6B7280]';
+        return 'bg-[#6D9CB6]';
+      case 'دورة تدريبية':
+        return 'bg-[#6D9CB6]';
+      case 'ورش العمل':
+        return 'bg-[#6D9CB6]';
+      case 'المُسابقة':
+        return 'bg-[#AD6DA7]';
+      case 'العروض التقديمية':
+        return 'bg-[#AD6DA7]';
       default:
-        return 'bg-gradient-to-r from-[#AD9E68] from-0% to-[#47412B] to-100%';
+        return 'bg-[#47412B]';
     }
   };
 
   return (
-    <div className="relative mb-12 flex-grow">
+    <div className={`relative flex-grow ${isFirstInAccordion ? '' : 'mb-12'}`}>
       <div className={`absolute w-4 h-4 bg-[#AD9E68] rounded-full ${hideCircle ? "hidden" : pointerClasses}`} />
       <div className='ps-4 lg:ps-8'>
         <h4 className="md:ml-2 lg:ml-0 text-[#252C32] md:text-[1.375rem] md:leading-[2rem] text-right mb-7 lg:mb-8 text-balance font-bold">{title}</h4>
