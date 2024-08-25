@@ -26,8 +26,8 @@ const SpeakerCard = ({ name, title, imageSrc, tags }) => (
       <Image
         src={imageSrc}
         alt={name}
-        width={229}
-        height={323}
+        width={1080}
+        height={1080}
         className="h-[323px] w-full object-cover rounded-lg"
       />
       <div>
