@@ -5,9 +5,18 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hideCircle = false, eventNumber }) => {
 
   const getTopClass = () => {
-    return eventNumber === "01"
-      ? "-top-[7.3rem] md:-top-[1.4rem]"
-      : "-top-[7.3rem] md:-top-[23px]";
+    switch (eventNumber) {
+      case "01":
+        return "-top-[7.55rem] md:-top-[1.4rem]";
+      case "02":
+        return "-top-[9.3rem] md:-top-[23px]";
+      case "03":
+        return "-top-[9.3rem] md:-top-[23px]";
+      case "04":
+        return "-top-[7.55rem] md:-top-[23px]";
+      default:
+        return "-top-[7.55rem] md:-top-[23px]";
+    }
   };
 
   const pointerClasses = `${getTopClass()} -right-[6px] md:-right-[27px]`;
@@ -75,7 +84,7 @@ const TimelineEvent = ({ number, title, date, items }) => {
           {number}
         </div>
         <Separator orientation='horizontal' className='bg-[#AD9E68] h-[2px]' />
-        <h3 className="sm:text-3xl ml-2 lg:ml-0 lg:text-[2.5rem] lg:leading-[3.25rem] font-bold text-[#AD9E68] text-right text-balance mb-0 lg:mb-4">
+        <h3 className="text-lg ml-2 lg:ml-0 lg:text-[2.5rem] lg:leading-[3.25rem] font-bold text-[#AD9E68] text-right mb-0 lg:mb-4 lg:text-balance">
           <span className='inline lg:hidden'>{number} - </span>
           {title}
         </h3>
