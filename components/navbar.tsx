@@ -82,7 +82,13 @@ export default function Navbar() {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
-    setNavStatus(latest > previous ? "hidden" : "visible");
+    if (latest <= 0) {
+      setNavStatus("visible");
+    } else if (latest > previous) {
+      setNavStatus("hidden");
+    } else {
+      setNavStatus("visible");
+    }
   });
 
   return (
