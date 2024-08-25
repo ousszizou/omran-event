@@ -48,7 +48,7 @@ export const Partners = () => {
 
         <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-8 sm:mt-12 md:mt-16">
           {partners.map((partner, index) => (
-            <li key={index} className="bg-white rounded flex items-center justify-center aspect-square">
+            <li key={index} className="flex items-center justify-center aspect-square">
               <PartnerLogo {...partner} />
             </li>
           ))}

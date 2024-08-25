@@ -19,8 +19,8 @@ const AwardCard = ({ text, imageSrc }: { text: string; imageSrc: string }) => {
       <Image
         src={imageSrc}
         alt={text}
-        layout="fill"
-        objectFit="cover"
+        fill
+        quality={100}
         className="absolute inset-0 z-0"
       />
       <div className="absolute inset-0 bg-black opacity-30 z-10" />
