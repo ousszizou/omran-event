@@ -4,34 +4,32 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hideCircle = false, eventNumber }) => {
 
-  const pointerClasses = isFirstInAccordion
-    ? eventNumber === "02"
-      ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[1.5rem] -right-[1.68rem]"
-      : eventNumber === "03"
-        ? "-top-[10rem] sm:-top-[10.75rem] lg:-top-[1.5rem] -right-[1.68rem]"
-        : "-top-[10rem] sm:-top-[1.4rem] -right-[1.68rem]"
-    : "-top-[6px] -right-[1.68rem]";
+  const getTopClass = () => {
+    return eventNumber === "01"
+      ? "-top-[7.3rem] md:-top-[1.4rem]"
+      : "-top-[7.3rem] md:-top-[23px]";
+  };
+
+  const pointerClasses = `${getTopClass()} -right-[6px] md:-right-[27px]`;
 
   const getBgColor = () => {
     switch (type) {
-      case 'محاضرة تدريبية':
-        return 'bg-[#6AAA72]';
-      case 'محاضرة تفاعلية':
+      case 'محاضرة':
         return 'bg-[#6AAA72]';
       case 'ندوة حوارية':
         return 'bg-[#6AAA72]';
-      case 'ورشة تدريبية':
+      case 'برنامج تدريبي':
         return 'bg-[#6D9CB6]';
-      case 'دورة تدريبية':
+      case 'ورش عمل':
         return 'bg-[#6D9CB6]';
-      case 'ورش العمل':
-        return 'bg-[#6D9CB6]';
-      case 'المُسابقة':
+      case 'جلسات مفتوحة':
         return 'bg-[#AD6DA7]';
-      case 'العروض التقديمية':
+      case 'جلسة مفتوحة':
+        return 'bg-[#AD6DA7]';
+      case 'عروض تقديمية':
         return 'bg-[#AD6DA7]';
       default:
-        return 'bg-[#47412B]';
+        return '';
     }
   };
 
@@ -41,7 +39,7 @@ const TimelineItem = ({ title, presenter, type, isFirstInAccordion = false, hide
       <div className='ps-4 lg:ps-8'>
         <h4 className="md:ml-2 lg:ml-0 text-[#252C32] md:text-[1.375rem] md:leading-[2rem] text-right mb-7 lg:mb-8 text-balance font-bold">{title}</h4>
         <div className="flex gap-4 sm:gap-7 md:gap-8 flex-col sm:flex-row items-start lg:items-center">
-          <div className={`text-white rounded-full px-5 py-2 ${getBgColor()} text-xs`}>{type}</div>
+          {type && <div className={`text-white rounded-full font-bold px-5 py-2 ${getBgColor()} text-xs`}>{type}</div>}
           {/* <p className="text-xs md:text-lg text-[#AD9E68] text-right font-medium">{presenter}</p> */}
         </div>
       </div>
@@ -53,26 +51,42 @@ const TimelineEvent = ({ number, title, date, items }) => {
   const dayNumber = {
     "01": "الأول",
     "02": "الثاني",
-    "03": "الثالث"
+    "03": "الثالث",
+    "04": "الثالث"
   }[number];
 
+  const getPositionClasses = () => {
+    switch (number) {
+      case "02":
+        return 'mt-8 -top-20';
+      case "03":
+        return '-top-32';
+      case "04":
+        return '-top-44';
+      default:
+        return '';
+    }
+  };
+
   return (
-    <div className={`px-4 sm:px-0 lg:px-4 flex flex-col lg:flex-row relative ${+number === 2 ? 'mt-8 -top-20' : (+number === 3 ? '-top-32' : '')
-      }`}>
+    <div className={`px-4 sm:px-0 lg:px-4 flex flex-col lg:flex-row relative ${getPositionClasses()}`}>
       <div className="lg:w-1/2 flex-1 flex flex-col items-start gap-4 relative">
-        <div className="xl:absolute order-1 lg:order-3 xl:-right-32 top-5 text-[#AD9E68]/40 font-medium text-[2.625rem] lg:text-8xl">
+        <div className="hidden lg:block xl:absolute order-1 lg:order-3 xl:-right-32 top-5 text-[#AD9E68]/40 font-medium text-[2.625rem] lg:text-8xl">
           {number}
         </div>
         <Separator orientation='horizontal' className='bg-[#AD9E68] h-[2px]' />
-        <h3 className="sm:text-3xl ml-2 lg:ml-0 lg:text-[2.5rem] lg:leading-[3.25rem] font-bold text-[#AD9E68] text-right text-balance mb-4">{title}</h3>
-        <p className="text-sm text-[#252C32]"><span className='text-[#AD9E68] font-bold'>اليوم {dayNumber}:</span> {date}</p>
+        <h3 className="sm:text-3xl ml-2 lg:ml-0 lg:text-[2.5rem] lg:leading-[3.25rem] font-bold text-[#AD9E68] text-right text-balance mb-0 lg:mb-4">
+          <span className='inline lg:hidden'>{number} - </span>
+          {title}
+        </h3>
+        <p className="text-sm text-[#252C32] mb-4 lg:mb-0"><span className='text-[#AD9E68] font-bold'>اليوم {dayNumber}:</span> {date}</p>
       </div>
       <Separator orientation='vertical' className='bg-[#AD9E68] w-[0.125rem] absolute lg:static inset-y-0 left-4 sm:left-0 lg:h-auto' />
       <div className="lg:w-1/2 flex-1 ms-[0.15rem]">
-        <div className={`${+number === 3 ? 'pb-0' : 'pb-32'} flex flex-col`}>
+        <div className={`${+number === 4 ? 'pb-0' : 'pb-32'} flex flex-col`}>
           <Accordion type="single" defaultValue="item-01" collapsible className="w-full lg:ms-4">
             <AccordionItem value={`item-${number}`} className='bg-[#AD9E68]/20 ml-[1.375rem] rounded-2xl'>
-              <AccordionTrigger className="text-[#252C32] text-[1.375rem] leading-[2rem] text-right mb-4 text-balance font-bold hover:no-underline">
+              <AccordionTrigger className="text-[#252C32] text-[1.375rem] leading-[2rem] text-right mb-4 text-balance hover:no-underline">
                 <TimelineItem {...items[0]} isFirstInAccordion={true} eventNumber={number} />
               </AccordionTrigger>
               <AccordionContent>
@@ -92,51 +106,63 @@ export const ConferenceProgram = () => {
   const events = [
     {
       number: "01",
-      title: "مهارات معاصرة في استدامة المشاريع",
+      title: "شروط نهضة الامة",
       date: "11 أكتوبر 2024",
       items: [
         {
-          title: "قواعد في استدامة المشاريع", presenter: "د. طارق السويدان", type: "دورة تدريبية",
+          title: "الشروط الخمسة للمشاريع النهضوية", presenter: "", type: "محاضرة",
           isAccordion: true,
           subItems: [
-            { title: "قوانين ومهارات في المؤسسية والقيادة بفعالية", presenter: "د. أكرم العدلوني", type: "محاضرة تدريبية" },
-            { title: "مهارات الريادة في السوق", presenter: "د. هيثم بابكر", type: "ورشة تدريبية" },
-            { title: "مهارات الاستدامة وقياس الأثر الاجتماعي في القرن 21", presenter: "د. سامي العدواني", type: "ورشة تدريبية" },
+            { title: "معادلة التغيير الحضاري في الأمة", presenter: "", type: "محاضرة" },
+            { title: "مقهى عمران للمرافقة والاستشارات", presenter: "", type: "جلسة مفتوحة" },
           ]
         },
       ]
     },
     {
       number: "02",
-      title: "ركائز وأخلاقيات ومفاهيم متقدمة",
+      title: "مهارات معاصرة في استدامة المشاريع",
       date: "12 أكتوبر 2024",
       items: [
         {
-          title: "الشروط الخمسة للمشاريع النهضوية",
-          presenter: "د. عبد الرزاق مقري",
-          type: "محاضرة تفاعلية",
+          title: "قواعد في استدامة المشاريع", presenter: "", type: "برنامج تدريبي",
           isAccordion: true,
           subItems: [
-            { title: "التحديات المعاصرة والنموذج الحضاري في الإسلام", presenter: "أ. وضاح خنفر", type: "ندوة حوارية" },
-            { title: "ركائز في إدارة المشاريع", presenter: "د. عبد الرزاق هزي", type: "ورش العمل" },
+            { title: "ركائز في إدارة وتنفيذ المشاريع", presenter: "", type: "ورش عمل" },
+            { title: "مقهى عمران للمرافقة والاستشارة", presenter: "", type: "جلسات مفتوحة" },
           ]
         },
       ]
     },
     {
       number: "03",
+      title: "مفاهيم وأخلاقيات في ممارسة الأعمال",
+      date: "13 أكتوبر 2024",
+      items: [
+        {
+          title: "ريادة الأعمال والخصوصية الحضارية",
+          presenter: "",
+          type: "ندوة حوارية",
+          isAccordion: true,
+          subItems: [
+            { title: "مقهى عمران للمرافقة والاستشارة ", presenter: "", type: "جلسات مفتوحة" },
+          ]
+        },
+      ]
+    },
+    {
+      number: "04",
       title: "قوة الإمكان الشبابي",
       date: "13 أكتوبر 2024",
       items: [
         {
-          title: "الإمكان الشبابي في بيئة الأعمال",
-          presenter: "أ. إبراهيم الهواري",
-          type: "محاضرة تدريبية",
+          title: "استراتيجية عمران للخمس سنوات القادمة",
+          presenter: "",
+          type: "عروض تقديمية",
           isAccordion: true,
           subItems: [
-            { title: "موقع المشاريع في الإعداد الحضاري وتغيير الواقع", presenter: "د. عبد الكريم بكار", type: "ندوة حوارية" },
-            { title: "10 مشاريع نهضوية رائدة في معالجة أزمات الأمّة الخمس", presenter: "منصة المشاريع", type: "العروض التقديمية" },
-            { title: "جائزة عمران السنوية ", presenter: "عُمران", type: "المُسابقة" },
+            { title: "الجائزة السنوية لأفضل مشروع بالأمة", presenter: "", type: "عروض تقديمية" },
+            { title: "الإعلان عن الفائز بالجائزة السنوية الأولى", presenter: "", type: "" },
           ]
         },
       ]
