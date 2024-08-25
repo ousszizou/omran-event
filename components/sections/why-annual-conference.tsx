@@ -91,7 +91,7 @@ export const WhyAnnualConference = () => {
   return (
     <section className="bg-[#AD9E68] w-full" ref={container}>
       <div className="pt-16 pb-8 md:pb-16 relative container mx-auto">
-        <div className="absolute top-40 left-6 z-10">
+        <div className="absolute top-80 md:top-40 left-6 z-10">
           <Image
             src={omranLogoSrc}
             alt="Omran Logo"

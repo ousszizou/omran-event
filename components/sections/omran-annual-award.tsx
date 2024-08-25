@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import OmranAnnualAwardImage from "../../assets/omran-annual-award.svg";
+import OmranAnnualAwardImage from "../../assets/omran-reward.png";
 
 export const OmranAnnualAward = () => {
   return (
@@ -27,7 +27,7 @@ export const OmranAnnualAward = () => {
             alt="جائزة عمران السنوية"
             width={550}
             height={680}
-            className="rounded-lg"
+            className="rounded-2xl border-8 border-[#3d4549]"
           />
         </div>
       </div>

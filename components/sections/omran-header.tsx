@@ -20,7 +20,7 @@ export const OmranHeader = () => {
   const container = useRef<HTMLDivElement>(null);
   const isInView = useInView(container, { once: true });
   return (
-    <header className="relative w-full h-screen pt-[8.626rem] md:pt-0 flex md:items-center justify-center" ref={container}>
+    <header className="relative w-full min-h-screen pb-10 md:pb-0 pt-[8.626rem] md:pt-0 flex md:items-center justify-center" ref={container}>
       <Image
         className="object-cover"
         src={backgroundSrc}
@@ -62,7 +62,7 @@ export const OmranHeader = () => {
             </Button>
           </ShowInAnimation>
         </div>
-        <div className="font-medium md:font-bold text-base text-start flex flex-col sm:flex-row md:items-start gap-6 md:gap-[5.25rem]">
+        <div className="font-medium md:font-bold text-base text-start flex flex-col items-center sm:flex-row md:items-start gap-6 md:gap-[5.25rem] px-4 md:px-0">
           <div className="flex items-start gap-4">
             <ShowInAnimation
               delay={2.2}
@@ -80,9 +80,9 @@ export const OmranHeader = () => {
               duration={0.3}
               isInView={isInView}
             >
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-center md:items-start">
 
-                <p>فندق Kaya Istanbul Fair & Convention Hotel</p>
+                <p className="text-center md:text-start">فندق Kaya Istanbul Fair & Convention</p>
                 <p>- مدينة اسطنبول، تركيا.</p>
               </div>
             </ShowInAnimation>
